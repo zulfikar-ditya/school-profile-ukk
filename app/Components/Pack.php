@@ -5,8 +5,8 @@ namespace App\Components;
 trait Pack
 {
     /**
-     * @var string $subFolder for for second folder and for route firs name
-     * @var string #folder for the first folder and route first name
+     * @param string $subFolder for for second folder and for route firs name
+     * @param string #folder for the first folder and route first name
      * 
      * @return array
      */
