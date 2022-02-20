@@ -68,6 +68,6 @@ class WhyUs extends Model
      */
     public static function getData()
     {
-        return WhyUs::orderByDesc('created_at')->all();
+        return WhyUs::orderByDesc('created_at')->get();
     }
 }

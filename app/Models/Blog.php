@@ -75,6 +75,6 @@ class Blog extends Model
      */
     public static function getData()
     {
-        return Blog::orderByDesc('created_at')->all();
+        return Blog::orderByDesc('created_at')->get();
     }
 }

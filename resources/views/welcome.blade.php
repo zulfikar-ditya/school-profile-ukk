@@ -23,13 +23,10 @@
 
 <body class="bg-gray-50">
     <h1 class="capitalize">Hello World</h1>
-
-    @yield('content')
-
-    @livewireScripts()
-    <script src="{{ asset('js/app.js') }}"></script>
-    @include('components.modal-alert')
-    @yield('js')
+    <x-form :method="'create'" :action="'admin/category/'">
+        <input type="text" name="" id="" class="form-input">
+    </x-form>
+    @yield('content') @livewireScripts() <script src="{{ asset('js/app.js') }}"></script> @include('components.modal-alert') @yield('js')
 </body>
 
 </html>

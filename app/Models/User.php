@@ -128,7 +128,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public static function getData()
     {
-        return User::orderByDesc('created_at')->all();
+        return User::orderByDesc('created_at')->get();
     }
 
     /**

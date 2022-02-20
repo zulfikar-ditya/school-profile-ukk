@@ -67,6 +67,6 @@ class LearningOportunity extends Model
      */
     public static function getData()
     {
-        return LearningOportunity::orderByDesc('created_at')->all();
+        return LearningOportunity::orderByDesc('created_at')->get();
     }
 }

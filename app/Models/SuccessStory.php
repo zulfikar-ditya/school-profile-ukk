@@ -67,6 +67,6 @@ class SuccessStory extends Model
      */
     public static function getData()
     {
-        return SuccessStory::orderByDesc('created_at')->all();
+        return SuccessStory::orderByDesc('created_at')->get();
     }
 }

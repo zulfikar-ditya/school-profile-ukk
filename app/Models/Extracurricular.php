@@ -70,6 +70,6 @@ class Extracurricular extends Model
      */
     public static function getData()
     {
-        return Extracurricular::orderByDesc('created_at')->all();
+        return Extracurricular::orderByDesc('created_at')->get();
     }
 }

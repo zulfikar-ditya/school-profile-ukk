@@ -70,6 +70,6 @@ class LearningProcess extends Model
      */
     public static function getData()
     {
-        return LearningProcess::orderByDesc('order')->all();
+        return LearningProcess::orderByDesc('order')->get();
     }
 }

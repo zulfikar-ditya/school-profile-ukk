@@ -68,6 +68,6 @@ class Quote extends Model
      */
     public static function getData()
     {
-        return Quote::orderByDesc('created_at')->all();
+        return Quote::orderByDesc('created_at')->get();
     }
 }

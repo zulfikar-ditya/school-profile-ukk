@@ -50,7 +50,7 @@ trait Pack
     public function routesCRUD(string $route, string $name = 'admin'): array
     {
         return [
-            'route' => [
+            'routes' => [
                 'index' => $name . '.' . $route . '.index',
                 'show' => $name . '.' . $route . '.show',
                 'create' => $name . '.' . $route . '.create',

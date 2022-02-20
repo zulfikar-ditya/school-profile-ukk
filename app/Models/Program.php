@@ -70,6 +70,6 @@ class Program extends Model
      */
     public static function getData()
     {
-        return Program::orderByDesc('created_at')->all();
+        return Program::orderByDesc('created_at')->get();
     }
 }

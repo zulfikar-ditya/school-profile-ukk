@@ -68,6 +68,6 @@ class Facility extends Model
      */
     public static function getData()
     {
-        return Facility::orderByDesc('created_at')->all();
+        return Facility::orderByDesc('created_at')->get();
     }
 }

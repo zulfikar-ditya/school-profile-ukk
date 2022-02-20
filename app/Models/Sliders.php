@@ -70,6 +70,6 @@ class Sliders extends Model
      */
     public static function getData()
     {
-        return Sliders::orderByDesc('created_at')->all();
+        return Sliders::orderByDesc('created_at')->get();
     }
 }

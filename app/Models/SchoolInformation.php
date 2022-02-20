@@ -84,6 +84,6 @@ class SchoolInformation extends Model
      */
     public static function getData()
     {
-        return SchoolInformation::orderByDesc('created_at')->all();
+        return SchoolInformation::orderByDesc('created_at')->get();
     }
 }

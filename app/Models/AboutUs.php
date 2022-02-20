@@ -68,6 +68,6 @@ class AboutUs extends Model
      */
     public static function getData()
     {
-        return AboutUs::orderByDesc('created_at')->all();
+        return AboutUs::orderByDesc('created_at')->get();
     }
 }

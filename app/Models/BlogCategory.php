@@ -64,6 +64,6 @@ class BlogCategory extends Model
      */
     public static function getData()
     {
-        return BlogCategory::orderByDesc('created_at')->all();
+        return BlogCategory::orderByDesc('created_at')->get();
     }
 }

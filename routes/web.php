@@ -20,3 +20,18 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    // admin
+    Route::middleware(['role:superuser|admin'])->namespace('\App\Http\Controllers\admin')->name('admin.')->prefix('admin')->group(function () {
+
+        // superuser
+        Route::middleware(['role:superuser'])->group(function () {
+            Route::resources([
+                'blog-category' => BlogCategoryController::class,
+            ]);
+        });
+        // superuser
+    });
+    // admin
+});
