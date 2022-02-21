@@ -1,9 +1,6 @@
-require('./bootstrap');
+require("./bootstrap");
 
-import Alpine from 'alpinejs';
-import swal from 'sweetalert';
-import $ from "jquery";
-
+import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 

@@ -22,11 +22,16 @@
 </head>
 
 <body class="bg-gray-50">
-    <h1 class="capitalize">Hello World</h1>
-    <x-form :method="'create'" :action="'admin/category/'">
-        <input type="text" name="" id="" class="form-input">
-    </x-form>
-    @yield('content') @livewireScripts() <script src="{{ asset('js/app.js') }}"></script> @include('components.modal-alert') @yield('js')
+    <x-input :type="'text'" :name="'name'" :required="true" :value="''"></x-input>
+    <x-input-switch :name="'text'" :value="''" :required="true"></x-input-switch>
+    <x-input-range :name="'text'" :value="''" :required="true"></x-input-range>
+    <x-input-radio :name="'text'" :value="''" :required="true"></x-input-radio>
+    @yield('content')
+    @livewireScripts()
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/tailwind-element.js') }}"></script>
+    @include('components.modal-alert')
+    @yield('js')
 </body>
 
 </html>
