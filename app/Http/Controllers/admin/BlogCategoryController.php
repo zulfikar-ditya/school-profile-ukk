@@ -21,7 +21,7 @@ class BlogCategoryController extends Controller
      */
     public function pack($arr = []): array
     {
-        return array_merge($arr, ['files' => $this->files], ['routes' => $this->routes]);
+        return array_merge($arr, ['files' => $this->files]);
     }
 
     /**
@@ -58,7 +58,8 @@ class BlogCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $model = [];
+        return view($this->files['create'], $this->pack(compact('model')));
     }
 
     /**
@@ -69,7 +70,15 @@ class BlogCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validateData($request);
+        $model = new model();
+        $model->loadModel($request->all());
+        try {
+            $model->save();
+        } catch (\Throwable $th) {
+            return redirect()->back()->with($this->messageRedirectCRUD(false, 'create', $th->getMessage()));
+        }
+        return redirect()->route($this->routes['show'], $model)->with($this->messageRedirectCRUD());
     }
 
     /**
@@ -80,7 +89,8 @@ class BlogCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = model::findOrFail($id);
+        return view($this->files['show'], $this->pack(compact('model')));
     }
 
     /**
@@ -91,7 +101,8 @@ class BlogCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = model::findOrFail($id);
+        return view($this->files['edit'], $this->pack(compact('model')));
     }
 
     /**
@@ -103,7 +114,14 @@ class BlogCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = model::findOrFail($id);
+        $model->loadModel($request->all());
+        try {
+            $model->save();
+        } catch (\Throwable $th) {
+            return redirect()->back()->with($this->messageRedirectCRUD(false, 'update', $th->getMessage()));
+        }
+        return redirect()->route($this->routes['show'], $model)->with($this->messageRedirectCRUD(true, 'update'));
     }
 
     /**
@@ -114,6 +132,12 @@ class BlogCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = model::findOrFail($id);
+        try {
+            $model->delete();
+        } catch (\Throwable $th) {
+            return redirect()->route($this->routes['show'], $id)->with($this->messageRedirectCRUD(false, 'delete'));
+        }
+        return redirect()->route($this->routes['index'])->with($this->messageRedirectCRUD(true, 'delete'));
     }
 }
