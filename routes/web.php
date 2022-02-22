@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum'])->group(function () {
     // admin
     Route::middleware(['role:superuser|admin'])->namespace('\App\Http\Controllers\admin')->name('admin.')->prefix('admin')->group(function () {
-
+        Route::get('/', [AdminController::class, 'index'])->name('index');
         // superuser
         Route::middleware(['role:superuser'])->group(function () {
             Route::resources([

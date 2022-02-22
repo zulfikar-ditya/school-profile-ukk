@@ -22,10 +22,6 @@
 </head>
 
 <body class="bg-gray-50">
-    <x-input :type="'text'" :name="'name'" :required="true" :value="''"></x-input>
-    <x-input-switch :name="'text'" :value="''" :required="true"></x-input-switch>
-    <x-input-range :name="'text'" :value="''" :required="true"></x-input-range>
-    <x-input-radio :name="'text'" :value="''" :required="true"></x-input-radio>
     @yield('content')
     @livewireScripts()
     <script src="{{ asset('js/app.js') }}"></script>
