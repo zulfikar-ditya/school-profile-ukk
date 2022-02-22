@@ -7,8 +7,10 @@
     @endif
 
     <div class="my-3">
-        {{ $slot }}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {{ $slot }}
+        </div>
     </div>
-    <x-btn-teal :type="'submit'" :color="'teal'">Submit </x-btn-teal>
-    <x-btn-amber :type="'reset'" :color="'amber'">Reset </x-btn-amber>
+    <x-btn-teal :type="'submit'" :color="'teal'" :id="'submit'">Submit </x-btn-teal>
+    <x-btn-amber :type="'reset'" :color="'amber'" :id="'reset'">Reset </x-btn-amber>
 </form>

@@ -21,7 +21,7 @@ class BlogCategoryController extends Controller
      */
     public function pack($arr = []): array
     {
-        return array_merge($arr, ['files' => $this->files]);
+        return array_merge($arr, ['files' => $this->files], ['routes' => $this->routes]);
     }
 
     /**
@@ -45,10 +45,18 @@ class BlogCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $model = model::getData();
-        return view($this->files['index'], $this->pack(compact('model')));
+        $model = new model();
+        $dataTables = $model->dataTables;
+        $field = $request->field;
+        $value = $request->s;
+        if ($field or $value) {
+            $model = $model->search($value, $field);
+        } else {
+            $model = $model->getData();
+        }
+        return view($this->files['index'], $this->pack(compact('model', 'dataTables')));
     }
 
     /**
@@ -90,7 +98,8 @@ class BlogCategoryController extends Controller
     public function show($id)
     {
         $model = model::findOrFail($id);
-        return view($this->files['show'], $this->pack(compact('model')));
+        $fields =  $model->fields;
+        return view($this->files['show'], $this->pack(compact('model', 'fields')));
     }
 
     /**
@@ -136,7 +145,7 @@ class BlogCategoryController extends Controller
         try {
             $model->delete();
         } catch (\Throwable $th) {
-            return redirect()->route($this->routes['show'], $id)->with($this->messageRedirectCRUD(false, 'delete'));
+            return redirect()->route($this->routes['show'], $id)->with($this->messageRedirectCRUD(false, 'delete', $th->getMessage()));
         }
         return redirect()->route($this->routes['index'])->with($this->messageRedirectCRUD(true, 'delete'));
     }

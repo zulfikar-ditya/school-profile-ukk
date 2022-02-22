@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>School Profile</title>
+  <title> @yield('title') | Admin - School Profile</title>
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link
@@ -21,11 +21,11 @@
       }
     </style> @livewireStyles() @yield('css')
   </head>
-  <body class="bg-gray-50 text-slate-700 antialiased">
+  <body class="bg-slate-100 text-slate-700 antialiased">
     <div id="root">
       @include('layouts.admin.sidebar')
       <div class="relative md:ml-64">
-        <nav class="absolute top-0 left-0 w-full z-10 bg-white md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
+        <nav class="absolute top-0 left-0 w-full z-10 bg-slate100 md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
           <div class="w-full mx-autp items-center flex justify-end md:flex-nowrap flex-wrap md:px-10 px-4">
             <ul class="flex-col md:flex-row list-none items-center hidden md:flex"> 
               <a class="text-blueGray-500 block" href="#{{Auth::user()->name}}" onclick="openDropdown(event,'user-dropdown')">
@@ -47,6 +47,7 @@
             </ul>
           </div>
         </nav>
+        
         {{-- main content --}}
         @yield('content')
         {{-- main content --}}

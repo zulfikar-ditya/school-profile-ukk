@@ -53,8 +53,13 @@
             </div>
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                 <li class="items-center"> 
-                    <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="#/dashboard">
+                    <a href="{{route('admin.index')}}" class=" text-xs uppercase py-3 font-bold block" id="dashboard">
                         <i class="fas fa-tv opacity-75 mr-2 text-sm"></i> Dashboard
+                    </a> 
+                </li>
+                <li class="items-center"> 
+                    <a href="{{route('admin.blog-category.index')}}" class=" text-xs uppercase py-3 font-bold block" id="blog-category">
+                        <i class="fas fa-tv opacity-75 mr-2 text-sm"></i> Blog Category
                     </a> 
                 </li>
             </ul>

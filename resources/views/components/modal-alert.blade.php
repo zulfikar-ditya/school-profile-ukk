@@ -4,16 +4,16 @@
             swal({
                 title: 'Yeay success !!!',
                 icon: 'success',
-                text: {{ session('message') }}
-            })
+                text: '{{ session('message') }}'
+            });
         </script>
     @else
         <script>
             swal({
                 title: 'Whoops something went wrong. !!!',
-                icon: 'success',
-                text: {{ session('message') }}
-            })
+                icon: 'error',
+                text: '{{ session('message') }}'
+            });
         </script>
     @endif
 @endif

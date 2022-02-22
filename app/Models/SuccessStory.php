@@ -65,8 +65,19 @@ class SuccessStory extends Model
      * get all data for display order by created at desc
      * @return  \Illuminate\Database\Eloquent\Collection
      */
-    public static function getData()
+    public function getData()
     {
-        return SuccessStory::orderByDesc('created_at')->get();
+        return SuccessStory::orderByDesc('created_at')->paginate(20);
+    }
+
+    /**
+     * @param string $request the value will be search
+     * @param string $col the col you looking for
+     * 
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function search($request, $col)
+    {
+        return SuccessStory::where($col, 'like', '%' . $request . '%')->orderByDesc('created_at')->paginate(20);
     }
 }
