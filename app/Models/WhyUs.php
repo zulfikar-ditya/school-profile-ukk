@@ -44,7 +44,7 @@ class WhyUs extends Model
      */
     public array $fields = [
         'text',
-        // 'image'
+        'image'
     ];
 
     /**
