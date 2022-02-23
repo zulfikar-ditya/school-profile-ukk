@@ -39,6 +39,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
                 'slider' => Sliderontroller::class,
                 'learning-process' => LearningProcessController::class,
                 'about-us' => AboutUsController::class,
+                'quote' => QuoteController::class,
+                'school-information' => SchoolInformationController::class,
             ]);
         });
         // superuser

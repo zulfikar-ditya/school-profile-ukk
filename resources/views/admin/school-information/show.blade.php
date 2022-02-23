@@ -1,7 +1,7 @@
 @extends('admin.base')
 
 @php
-    $title = 'show about-us';
+    $title = 'show school-information';
 @endphp
 @section('title', Str::headline($title))
 
@@ -25,8 +25,13 @@
                                     <tr class="border-b bg-white even:bg-gray-100 hover:bg-gray-100">
                                         <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{Str::headline($item)}}</td>
                                         <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            @if ($item == 'image')
+                                            @if ($item == 'logo' or $item == 'mission')
+                                                @if ($item == 'logo')
                                                 <img src="{{url('storage/'.$model->$item)}}" alt="" class="h-96">
+                                                @endif
+                                                @if ($item == 'mission')
+                                                    {!!$model->item!!}
+                                                @endif
                                             @else
                                                 {{$model->$item}}
                                             @endif

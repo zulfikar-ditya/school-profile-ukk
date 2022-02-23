@@ -1,7 +1,7 @@
 @extends('admin.base')
 
 @php
-    $title = 'show about-us';
+    $title = 'show quote';
 @endphp
 @section('title', Str::headline($title))
 
