@@ -1,7 +1,7 @@
 @extends('admin.base')
 
 @php
-    $title = 'show blog';
+    $title = 'show extracurricular';
 @endphp
 @section('title', Str::headline($title))
 
@@ -24,18 +24,10 @@
                                     @foreach ($fields as $item)
                                     <tr class="border-b bg-white even:bg-gray-100 hover:bg-gray-100">
                                         <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{Str::headline($item)}}</td>
-                                        @if ($item == 'blog_category_id' or $item == 'image' or $item == 'content')
-                                            @if ($item == 'blog_category_id')
-                                                <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap"> {{$model->blog_category->name}} </td>    
-                                            @endif
-                                            @if ($item == 'image')
-                                                <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <img src="{{url('storage/'.$model->$item)}}" alt="" class="h-96">
-                                                </td>
-                                            @endif
-                                            @if ($item == 'content')
-                                                <td class="px-6 py-4 whitespace-nowrap">{!!$model->$item!!}</td>
-                                            @endif
+                                        @if ($item == 'image')
+                                            <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <img src="{{url('storage/'.$model->$item)}}" alt="" class="h-96">
+                                            </td>
                                         @else
                                             <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$model->$item}}</td>
                                         @endif

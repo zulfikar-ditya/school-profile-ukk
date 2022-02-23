@@ -2765,6 +2765,12 @@ textarea.form-control.is-invalid {
 .h-2 {
   height: 0.5rem;
 }
+.h-96 {
+  height: 24rem;
+}
+.max-h-96 {
+  max-height: 24rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
