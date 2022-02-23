@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::middleware(['role:superuser'])->group(function () {
             Route::resources([
                 'blog-category' => BlogCategoryController::class,
+                'success-story' => SuccessStoryController::class,
             ]);
         });
         // superuser

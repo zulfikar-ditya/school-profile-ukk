@@ -43,7 +43,17 @@ class SuccessStory extends Model
     public array $fields = [
         'name',
         'text',
-        'video_url'
+        'video_url',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * @var array $dataTables for data to display in index
+     */
+    public array $dataTables = [
+        'name',
+        'video_url',
     ];
 
     /**

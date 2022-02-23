@@ -3,5 +3,6 @@
     "/js/tailwind-element.js": "/js/tailwind-element.js",
     "/js/jquery.js": "/js/jquery.js",
     "/js/sweetalert.js": "/js/sweetalert.js",
+    "/js/tinymce.js": "/js/tinymce.js",
     "/css/app.css": "/css/app.css"
 }
