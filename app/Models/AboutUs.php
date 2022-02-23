@@ -44,7 +44,7 @@ class AboutUs extends Model
      */
     public array $fields = [
         'text',
-        // 'image'
+        'image'
     ];
 
     /**
