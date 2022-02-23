@@ -35,6 +35,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
                 'extracurricular' => ExtracurricularController::class,
                 'facility' => FacilityController::class,
                 'learning-oportunity' => LearningOportunityController::class,
+                'program' => ProgramController::class,
             ]);
         });
         // superuser
