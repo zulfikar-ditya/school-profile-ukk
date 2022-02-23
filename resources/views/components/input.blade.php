@@ -26,7 +26,7 @@
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
         name="{{ $name }}" id="{{ $name }}" placeholder="{{ Str::headline($name) }}"
         value="{{$value}}"
-        {{ $required ? 'required' : '' }} 
-        {{$autofocus ? 'autofocus' : ''}}
+        {{ $value != null && $required ? 'required' : '' }} 
+        {{ $autofocus ? 'autofocus' : '' }}
         />
 </div>
