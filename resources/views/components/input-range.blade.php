@@ -6,7 +6,7 @@
         <input type="range"
             class=" form-range appearance-none w-full h-6 p-0  bg-transparent focus:outline-none focus:ring-0 focus:shadow-none"
             name="{{ $name }}" id="{{ $name }}" placeholder="{{ Str::headline($name) }}"
-            value="{{ $value }}" {{ $value != null && $required ? 'required' : '' }}
+            value="{{ $value }}" {{ $value == null && $required ? 'required' : '' }}
             {{$autofocus ? 'autofocus' : ''}}
             />
     </div>

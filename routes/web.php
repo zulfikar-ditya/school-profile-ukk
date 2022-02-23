@@ -33,6 +33,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
                 'blog' => BlogController::class,
                 'success-story' => SuccessStoryController::class,
                 'extracurricular' => ExtracurricularController::class,
+                'facility' => FacilityController::class,
             ]);
         });
         // superuser

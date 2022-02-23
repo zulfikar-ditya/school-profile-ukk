@@ -19,7 +19,7 @@
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="{{ $name }}" id="{{ $name }}" {{ $value != null && $required ? 'required' : '' }} value="{{ $value }}">
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="{{ $name }}" id="{{ $name }}" {{ $value == null && $required ? 'required' : '' }} value="{{ $value }}">
         <option value="" selected>------</option>
         @foreach ($data as $item)
             <option value="{{$item->id}}" {{$value == $item->id ? 'selected' : ''}}>{{$item->name}}</option>

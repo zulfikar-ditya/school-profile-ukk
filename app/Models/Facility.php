@@ -44,7 +44,16 @@ class Facility extends Model
      */
     public array $fields = [
         'name',
-        // 'image'
+        'image',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * @var array $dataTables for data to display in index
+     */
+    public array $dataTables = [
+        'name',
     ];
 
     /**
