@@ -76,19 +76,21 @@ class User extends Authenticatable implements MustVerifyEmail
     public static function validateData(string $method = 'create', bool $hasUnique = false, int $id = null): array
     {
         if ($hasUnique) {
-            $arr = [
+            $array = [
                 'name' => 'required|string|max:255',
             ];
             if ($method == 'create') {
-                $arr = array_merge($arr, [
-                    'email' => 'required|string|max:255|email|unique:users,id',
-                    'password' => 'required|sring|max:255',
+                $arr = array_merge($array, [
+                    'email' => 'required|string|max:255|email|unique:users,email',
+                    'password' => 'required|string|max:255|min:8',
+                    'profile_photo_path' => 'nullable|images|mimes:jpg,jpeg,png|max:2048'
                 ]);
             } else {
-                $arr = array_merge($arr, [
-                    'email' => 'required|string|max:255|email|unique:users,id,' . $id,
-                    'password' => 'nullable|sring|max:255',
-                    'old_password' => 'nullable|sring|max:255'
+                $arr = array_merge($array, [
+                    'email' => 'required|string|max:255|email|unique:users,email,' . $id,
+                    'password' => 'nullable|string|max:255|min:8',
+                    'old_password' => 'nullable|string|max:255',
+                    'profile_photo_path' => 'nullable|images|mimes:jpg,jpeg,png|max:2048'
                 ]);
             }
         } else {
@@ -103,8 +105,18 @@ class User extends Authenticatable implements MustVerifyEmail
     public array $fields = [
         'name',
         'email',
-        'password',
-        // 'image'
+        // 'password',
+        'profile_photo_path',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * @var array $dataTables for data to display in index
+     */
+    public array $dataTables = [
+        'name',
+        'email',
     ];
 
     /**

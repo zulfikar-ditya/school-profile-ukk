@@ -42,6 +42,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
                 'quote' => QuoteController::class,
                 'school-information' => SchoolInformationController::class,
                 'why-us' => WhyUsController::class,
+                'user' => UserController::class
             ]);
         });
         // superuser

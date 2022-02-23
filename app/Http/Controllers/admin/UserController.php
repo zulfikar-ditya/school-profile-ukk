@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\LearningProcess as model;
+use App\Models\User as model;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
-class LearningProcessController extends Controller
+class UserController extends Controller
 {
     public function __construct()
     {
-        $init = $this->init('learning-process');
+        $init = $this->init('user');
         $this->files = $init['files'];
         $this->routes = $init['routes'];
     }
@@ -38,10 +40,7 @@ class LearningProcessController extends Controller
         $this->validate($request, model::validateData($method, $hasUnique, $id));
     }
 
-    /**
-     * for storing any files you upload
-     */
-    public string $folder = 'order';
+    public string $folder;
 
     /**
      * Display a listing of the resource.
@@ -70,7 +69,8 @@ class LearningProcessController extends Controller
     public function create()
     {
         $model = [];
-        return view($this->files['create'], $this->pack(compact('model')));
+        $role = Role::all();
+        return view($this->files['create'], $this->pack(compact('model', 'role')));
     }
 
     /**
@@ -84,6 +84,10 @@ class LearningProcessController extends Controller
         $this->validateData($request, 'create', true);
         $model = new model();
         $model->loadModel($request->all());
+        $model->loadPassword($request->password);
+        $role = $request->role;
+        $get_role = Role::findOrFail($role);
+        $model->syncRoles($get_role->name);
         try {
             $model->save();
         } catch (\Throwable $th) {
@@ -114,7 +118,8 @@ class LearningProcessController extends Controller
     public function edit($id)
     {
         $model = model::findOrFail($id);
-        return view($this->files['edit'], $this->pack(compact('model')));
+        $role = Role::all();
+        return view($this->files['edit'], $this->pack(compact('model', 'role')));
     }
 
     /**
@@ -128,12 +133,15 @@ class LearningProcessController extends Controller
     {
         $model = model::findOrFail($id);
         $this->validateData($request, 'update', true, $id);
-        $oldFile =  $model->image;
         $model->loadModel($request->all());
-        if ($request->hasFile('image')) {
-            $this->deleteOne($oldFile);
-            $model->image = $this->uploadFile($request->file('image'), $this->folder);
+        if ($request->old_password) {
+            if ($model->checkPassword($request->old_password, $model->password)) {
+                $model->loadPassword($request->password);
+            }
         }
+        $role = $request->role;
+        $get_role = Role::findOrFail($role);
+        $model->syncRoles($get_role->name);
         try {
             $model->save();
         } catch (\Throwable $th) {
@@ -151,7 +159,6 @@ class LearningProcessController extends Controller
     public function destroy($id)
     {
         $model = model::findOrFail($id);
-        $this->deleteOne($model->image);
         try {
             $model->delete();
         } catch (\Throwable $th) {

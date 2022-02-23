@@ -1,6 +1,6 @@
 @props(['method', 'action'])
 
-<form action="{{ $action }}" method="post" enctype="multipart/form-data">
+<form action="{{ $action }}" method="post" enctype="multipart/form-data" id="form">
     @csrf
     @if ($method != 'create')
         <input type="hidden" name="_method" value="PUT">
