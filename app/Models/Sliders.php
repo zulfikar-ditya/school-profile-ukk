@@ -45,8 +45,18 @@ class Sliders extends Model
      */
     public array $fields = [
         'main_text',
-        'sub_text'
-        // 'image'
+        'sub_text',
+        'image',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * @var array $dataTables for data to display in index
+     */
+    public array $dataTables = [
+        'main_text',
+        // 'sub_text'
     ];
 
     /**

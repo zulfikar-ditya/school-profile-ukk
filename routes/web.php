@@ -36,6 +36,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
                 'facility' => FacilityController::class,
                 'learning-oportunity' => LearningOportunityController::class,
                 'program' => ProgramController::class,
+                'slider' => Sliderontroller::class,
             ]);
         });
         // superuser

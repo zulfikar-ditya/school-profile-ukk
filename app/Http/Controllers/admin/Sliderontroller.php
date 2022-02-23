@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\Program as model;
+use App\Models\Sliders as model;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProgramController extends Controller
+class Sliderontroller extends Controller
 {
     public function __construct()
     {
-        $init = $this->init('program');
+        $init = $this->init('slider');
         $this->files = $init['files'];
         $this->routes = $init['routes'];
     }
@@ -41,7 +41,7 @@ class ProgramController extends Controller
     /**
      * for storing any files you upload
      */
-    public string $folder = 'program';
+    public string $folder = 'slider';
 
     /**
      * Display a listing of the resource.
