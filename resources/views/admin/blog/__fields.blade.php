@@ -6,11 +6,9 @@
     <x-input-textarea :name="'content'" :value="$model ? $model->content : '' " :required="true" :autofocus="false"></x-input-textarea>
 </x-form>
 
-@section('js')
-    <script src="{{asset('js/tinymce.js')}}"></script>
-    <script>
-        tinymce.init({
-            selector: '#content'
-        })
-    </script>
-@endsection
+<script src="{{asset('js/tinymce.js')}}"></script>
+<script>
+    tinymce.init({
+        selector: '#content'
+    })
+</script>

@@ -1,6 +1,7 @@
 @extends('admin.base')
 
 @php
+    $page_title = 'message';
     $title = 'show message';
 @endphp
 @section('title', Str::headline($title))
@@ -8,6 +9,27 @@
 @section('content')
 <div class="relative bg-gray-100 md:pt-32 pb-32 pt-12l w-full">
     <div class="px-4 md:px-10 mx-auto w-full">
+        <nav class="bg-gray-100 px-5 py-3 rounded-md w-full">
+            <ul class="flex list-none gap-4">
+                <li>
+                    <a href="{{route('admin.index')}}" class="text-blue-500 font-bold">Dashboard</a>
+                </li>
+                <li>
+                    <span class="text-gray-500 mx-2">/</span>
+                </li>
+                <li>
+                    <a href="{{route($routes['index'])}}" class="text-blue-500 font-bold">{{Str::headline($page_title)}}</a>
+                </li>
+                <li>
+                    <span class="text-gray-500 mx-2">/</span>
+                </li>
+                <li class="text-gray-500">
+                    <a href="{{route($routes['show'], $model)}}">
+                        {{Str::headline($title)}}
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <x-card :title="Str::headline($title)">
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -50,7 +72,7 @@
 
 @section('js')
     <script>
-        document.querySelector('#{{$title}}').classList.add('text-rose-500')
+        document.querySelector('#{{$page_title}}').classList.add('text-rose-500')
     </script>
     <script>
         var btn = document.getElementById('btn-delete-{{$model->id}}');

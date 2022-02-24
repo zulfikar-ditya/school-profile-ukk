@@ -12,11 +12,11 @@
     <x-input :type="'text'" :name="'address'" :value="$model ? $model->address : '' " :required="true" :autofocus="false"></x-input>
 </x-form>
 
-@section('js')
+{{-- @section('js') --}}
     <script src="{{asset('js/tinymce.js')}}"></script>
     <script>
         tinymce.init({
             selector: '#mission'
         });
     </script>
-@endsection
+{{-- @endsection --}}

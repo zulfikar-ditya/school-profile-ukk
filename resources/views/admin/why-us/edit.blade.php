@@ -1,7 +1,7 @@
 @extends('admin.base')
 
 @php
-    $title = 'edit school-information';
+    $title = 'edit why-us';
 @endphp
 @section('title', Str::headline($title))
 

@@ -4,7 +4,7 @@
     <x-input :type="'url'" :name="'video_url'" :value="$model ? $model->video_url : '' " :required="true" :autofocus="false"></x-input>
     <x-input-textarea :name="'text'" :value="$model ? $model->text : '' " :required="true" :autofocus="false"></x-input-textarea>
 </x-form>
-@section('js')
+{{-- @section('js') --}}
     <script src="{{asset('js/tinymce.js') }}"></script>
     <script>
         var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -12,4 +12,4 @@
             selector:  '#text',
         });
     </script>
-@endsection
+{{-- @endsection --}}

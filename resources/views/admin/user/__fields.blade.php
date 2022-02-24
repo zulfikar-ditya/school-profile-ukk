@@ -18,7 +18,7 @@
             }
         @endphp
     @endif
-    <x-input-select :name="'role'" :value="$model ? $value_role : '' " :required="true" :autofocus="false" :data="$role"></x-input-select>
+    <x-input-select :name="'role'" :value="$model ? $value_role : '' " :required="false" :autofocus="false" :data="$role"></x-input-select>
 </x-form>
 
 @section('js')
@@ -30,7 +30,11 @@
         let password = document.getElementById('password').value;
         let confirm_password = document.getElementById('confirm_password').value;
         @if ($model)
-            let old_password = document.getElementById('old_password');
+            if (password.length == 0) {
+                btn.removeEventListener('click', passwordCheck);
+                document.getElementById('form').reset();
+                document.getElementById('form').submit();
+            }
         @endif
     
         // check the password length != 0
@@ -60,6 +64,9 @@
             }
         }
     }
-    btn.addEventListener('click', passwordCheck;
+    btn.addEventListener('click', passwordCheck);
+</script>
+<script>
+    document.querySelector('#user').classList.add('text-rose-500')
 </script>
 @endsection

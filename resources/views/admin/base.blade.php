@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     @livewireStyles() 
     @yield('css')
   </head>
@@ -50,6 +49,7 @@
     <script src="{{ asset('js/tailwind-element.js') }}"></script> 
     <script src="{{asset('js/jquery.js') }}"></script>
     <script src="{{asset('js/sweetalert.js') }}"></script>
+    <script src="{{asset('js/feather-icons.js') }}"></script>
     <script>
       /* Sidebar - Side navigation menu on mobile/responsive mode */ 
       function toggleNavbar(collapseID) {
