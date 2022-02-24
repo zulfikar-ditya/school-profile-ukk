@@ -23,3 +23,5 @@ mix.js("resources/js/tinymce.js", "public/js");
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.copyDirectory("resources/font", "public/font");

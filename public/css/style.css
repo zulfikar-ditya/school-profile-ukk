@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Nunito Black";
+    src: url(/fonts/Nunito-Black.ttf?65140864829fb5dce3a1f7c020be22ce);
+}
+
+@font-face {
+    font-family: "Nunito Black Italic";
+    src: url(/fonts/Nunito-BlackItalic.ttf?335e10179a67d2524f8c01129cab9bff);
+}
+
+@font-face {
+    font-family: "Nunito Bold";
+    src: url(/fonts/Nunito-Bold.ttf?4553e8e307fb4dc343b74b350914310d);
+}
+
+@font-face {
+    font-family: "Nunito Bold Italic";
+    src: url(/fonts/Nunito-BoldItalic.ttf?5cee6675c205bdc2fa444f5b7fdeffc3);
+}
+
+@font-face {
+    font-family: "Nunito Extra Bold";
+    src: url(/fonts/Nunito-ExtraBold.ttf?203b93f489123ffb7763a73aba580771);
+}
+
+@font-face {
+    font-family: "Nunito Extra Bold Italic";
+    src: url(/fonts/Nunito-ExtraBoldItalic.ttf?d2dd6fd6c54789d535268b34107c045b);
+}
+
+@font-face {
+    font-family: "Nunito Extra Light";
+    src: url(/fonts/Nunito-ExtraLight.ttf?165fc745d7ed05ceb37da97a42fbb000);
+}
+
+@font-face {
+    font-family: "Nunito Extra Light Italic";
+    src: url(/fonts/Nunito-ExtraLightItalic.ttf?a76c5b7c36bed98e96328ec35f3651e1);
+}
+
+@font-face {
+    font-family: "Nunito Italic";
+    src: url(/fonts/Nunito-Italic.ttf?5048dbf6d175e30b8378773ca606824c);
+}
+
+@font-face {
+    font-family: "Nunito Light";
+    src: url(/fonts/Nunito-Light.ttf?8f5610014505d18f0ffe956ebf8b2ab5);
+}
+
+@font-face {
+    font-family: "Nunito Light Italic";
+    src: url(/fonts/Nunito-LightItalic.ttf?691c3a7a6a0f308f10f64f86a606f543);
+}
+
+@font-face {
+    font-family: "Nunito Medium";
+    src: url(/fonts/Nunito-Medium.ttf?5c758da119667f9f989f705ce6e41c0a);
+}
+
+@font-face {
+    font-family: "Nunito Medium Italic";
+    src: url(/fonts/Nunito-MediumItalic.ttf?33c60bf607807c75b9901cf278e79b84);
+}
+
+@font-face {
+    font-family: "Nunito Regular";
+    src: url(/fonts/Nunito-Regular.ttf?325f6b17880102deb0a8cbbc06dcea5b);
+}
+
+@font-face {
+    font-family: "Nunito Semi Bold";
+    src: url(/fonts/Nunito-SemiBold.ttf?6a5a212cd3c4da7e7ba8fca69c2690e5);
+}
+
+@font-face {
+    font-family: "Nunito Semi Bold Italic";
+    src: url(/fonts/Nunito-SemiBoldItalic.ttf?d3b2eb0e78c32b5d46beaca2e0751eb1);
+}
+
+body {
+    font-family: "Nunito Regular";
+}
