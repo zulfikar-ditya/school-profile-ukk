@@ -26,6 +26,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // admin
     Route::middleware(['role:superuser|admin'])->namespace('\App\Http\Controllers\admin')->name('admin.')->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('index');
+        Route::post('message/{id}/read', [AdminController::class, 'readMessage'])->name('message.read');
         Route::resources([
             'blog' => BlogController::class,
             'success-story' => SuccessStoryController::class,

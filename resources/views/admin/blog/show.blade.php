@@ -7,7 +7,7 @@
 @section('title', Str::headline($title))
 
 @section('content')
-<div class="relative bg-gray-100 md:pt-32 pb-32 pt-12l w-full">
+<div class="relative bg-gray-100 md:pt-32 pb-32 pt-12 w-full">
     <div class="px-4 md:px-10 mx-auto w-full">
         <nav class="bg-gray-100 px-5 py-3 rounded-md w-full">
             <ul class="flex list-none gap-4">

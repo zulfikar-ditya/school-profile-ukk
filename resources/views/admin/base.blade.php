@@ -10,6 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f43f5e">
     <title> @yield('title') | Admin - {{$name}} | {{$title}}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -17,7 +18,7 @@
     @yield('css')
     <link rel="shortcut icon" href="{{url('storage/'.$logo)}}" type="image/x-icon">
   </head>
-  <body class="bg-slate-100 text-slate-700 antialiased">
+  <body class="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-white antialiased">
     <div id="root">
       @include('layouts.admin.sidebar')
       <div class="relative md:ml-64">
@@ -31,7 +32,7 @@
                   </span> 
                 </div>
               </a>
-              <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-dropdown"> 
+              <div class="hidden bg-white dark:bg-gray-800 dark:text-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-dropdown"> 
                 <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center">
                   <i class=""data-feather="user"></i>
                   My Account
@@ -50,7 +51,8 @@
         </nav>
         
         {{-- main content --}}
-        @yield('content')
+          @yield('content')
+          @include('components.dark-mode-toggle')
         {{-- main content --}}
       </div>
     </div>
@@ -61,6 +63,7 @@
     <script src="{{asset('js/jquery.js') }}"></script>
     <script src="{{asset('js/sweetalert.js') }}"></script>
     <script src="{{asset('js/feather-icons.js') }}"></script>
+    <script src="{{asset('js/darkmode.js') }}"></script>
     <script>
       /* Sidebar - Side navigation menu on mobile/responsive mode */ 
       function toggleNavbar(collapseID) {

@@ -6,7 +6,7 @@
 @section('title', Str::headline($title))
 
 @section('content')
-<div class="relative md:pt-32 pb-32 pt-12l w-full">
+<div class="relative md:pt-32 pb-32 pt-12 w-full">
     <div class="px-4 md:px-10 mx-auto w-full">
         <nav class="bg-gray-100 px-5 py-3 rounded-md w-full">
             <ul class="flex list-none gap-4">
@@ -32,7 +32,7 @@
                             <div class="w-full lg:w-1/2 py-2 pz-0 lg:py-0 lg:px-2">
                                 <label for="" class="form-label mb-2 font-bold">Search By <span class="text-cyan-500">*</span></label>
                                 <select class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="field"> 
-                                    <option value="" selectend>------</option>
+                                    <option value="" selected>------</option>
                                     @foreach ($dataTables as $item)
                                         <option value="{{$item}}" @isset($_REQUEST['field']) {{$item == $_REQUEST['field'] ? 'selected' : ''}} @endisset>{{Str::headline($item)}}</option>
                                     @endforeach

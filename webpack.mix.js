@@ -21,6 +21,7 @@ mix.js("resources/js/jquery.js", "public/js");
 mix.js("resources/js/sweetalert.js", "public/js");
 mix.js("resources/js/tinymce.js", "public/js");
 mix.js("resources/js/feather-icons.js", "public/js");
+mix.js("resources/js/darkmode.js", "public/js");
 if (mix.inProduction()) {
     mix.version();
 }
