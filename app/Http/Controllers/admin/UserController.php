@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\User as model;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
@@ -140,6 +141,9 @@ class UserController extends Controller
             }
         }
         $role = $request->role;
+        if ($model->hasRole('superuser')) {
+            return redirect()->route($this->routes['edit'], $id)->with($this->messageRedirectCRUD(false, 'delete', null, "can't update role user with role superuser"));
+        }
         $get_role = Role::findOrFail($role);
         $model->syncRoles($get_role->name);
         try {
@@ -159,6 +163,14 @@ class UserController extends Controller
     public function destroy($id)
     {
         $model = model::findOrFail($id);
+        if ($id == Auth::user()->id) {
+            return redirect()->route($this->routes['show'], $id)->with($this->messageRedirectCRUD(false, 'delete', null, "can't delete this active user"));
+        }
+        $role = $model->getRoleNames()[0];
+        if ($model->hasRole('superuser')) {
+            return redirect()->route($this->routes['show'], $id)->with($this->messageRedirectCRUD(false, 'delete', null, "can't delete user with role superuser"));
+        }
+        $model->revokeRole($role->name);
         try {
             $model->delete();
         } catch (\Throwable $th) {
