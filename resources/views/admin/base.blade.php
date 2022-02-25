@@ -1,15 +1,21 @@
+@php
+    $school_information = App\Models\SchoolInformation::orderByDesc('created_at')->limit(1)->get()[0];
+    $name = $school_information->name;
+    $logo = $school_information->logo;
+    $title = $school_information->title;
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> @yield('title') | Admin - School Profile</title>
+    <title> @yield('title') | Admin - {{$name}} | {{$title}}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" />
     @livewireStyles() 
     @yield('css')
+    <link rel="shortcut icon" href="{{url('storage/'.$logo)}}" type="image/x-icon">
   </head>
   <body class="bg-slate-100 text-slate-700 antialiased">
     <div id="root">
