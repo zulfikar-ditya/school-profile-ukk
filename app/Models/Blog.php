@@ -49,8 +49,18 @@ class Blog extends Model
     public array $fields = [
         'title',
         'content',
-        'blog_category_id'
-        // 'image'
+        'blog_category_id',
+        'image',
+        'slug',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * @var array $dataTables for data to display in index
+     */
+    public array $dataTables = [
+        'title',
     ];
 
     /**
@@ -66,7 +76,7 @@ class Blog extends Model
                 }
             }
         }
-        $this->setAttribute('slug', Str::slug($request->title));
+        $this->setAttribute('slug', Str::slug($request['title']));
     }
 
     /**
@@ -87,5 +97,10 @@ class Blog extends Model
     public function search($request, $col)
     {
         return Blog::where($col, 'like', '%' . $request . '%')->orderByDesc('created_at')->paginate(20);
+    }
+
+    public function blog_category()
+    {
+        return $this->belongsTo(BlogCategory::class);
     }
 }

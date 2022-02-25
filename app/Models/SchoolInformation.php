@@ -61,6 +61,8 @@ class SchoolInformation extends Model
         'facebook',
         'fax',
         'address',
+        'created_at',
+        'updated_at'
     ];
 
     /**

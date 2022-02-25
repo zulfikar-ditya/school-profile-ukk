@@ -46,7 +46,17 @@ class LearningProcess extends Model
     public array $fields = [
         'order',
         'text',
-        'sub_text'
+        'sub_text',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * @var array $dataTables for data to display in index
+     */
+    public array $dataTables = [
+        'order',
+        'text'
     ];
 
     /**
@@ -80,6 +90,6 @@ class LearningProcess extends Model
      */
     public function search($request, $col)
     {
-        return LearningProcess::where($col, 'like', '%' . $request . '%')->orderBy('created_at', 'order')->paginate(20);
+        return LearningProcess::where($col, 'like', '%' . $request . '%')->orderBy('order', 'desc')->paginate(20);
     }
 }

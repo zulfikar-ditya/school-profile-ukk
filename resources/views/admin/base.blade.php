@@ -1,27 +1,24 @@
+@php
+    $school_information = App\Models\SchoolInformation::orderByDesc('created_at')->limit(1)->get()[0];
+    $name = $school_information->name;
+    $logo = $school_information->logo;
+    $title = $school_information->title;
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> @yield('title') | Admin - School Profile</title>
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css"
-    />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <style>
-      body {
-        font-family: 'Nunito', sans-serif;
-      }
-    </style> @livewireStyles() @yield('css')
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f43f5e">
+    <title> @yield('title') | Admin - {{$name}} | {{$title}}</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @livewireStyles() 
+    @yield('css')
+    <link rel="shortcut icon" href="{{url('storage/'.$logo)}}" type="image/x-icon">
   </head>
-  <body class="bg-slate-100 text-slate-700 antialiased">
+  <body class="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-white antialiased">
     <div id="root">
       @include('layouts.admin.sidebar')
       <div class="relative md:ml-64">
@@ -35,13 +32,18 @@
                   </span> 
                 </div>
               </a>
-              <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-dropdown"> 
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a>
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Anotheraction</a>
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Somethingelse here</a>
+              <div class="hidden bg-white dark:bg-gray-800 dark:text-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-dropdown"> 
+                <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center">
+                  <i class=""data-feather="user"></i>
+                  My Account
+                </a>
                 <div class="h-0 my-2 border border-solid border-blueGray-100"></div> 
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
-                  link
+                <a href="{{route('logout')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center" id="link-logout">
+                  <i data-feather="log-out"></i>
+                  Logout
+                  <form action="{{route('logout')}}" method="post" id="form-logout">
+                    @csrf
+                  </form>
                 </a>
               </div>
             </ul>
@@ -49,7 +51,8 @@
         </nav>
         
         {{-- main content --}}
-        @yield('content')
+          @yield('content')
+          @include('components.dark-mode-toggle')
         {{-- main content --}}
       </div>
     </div>
@@ -59,6 +62,8 @@
     <script src="{{ asset('js/tailwind-element.js') }}"></script> 
     <script src="{{asset('js/jquery.js') }}"></script>
     <script src="{{asset('js/sweetalert.js') }}"></script>
+    <script src="{{asset('js/feather-icons.js') }}"></script>
+    <script src="{{asset('js/darkmode.js') }}"></script>
     <script>
       /* Sidebar - Side navigation menu on mobile/responsive mode */ 
       function toggleNavbar(collapseID) {
@@ -78,6 +83,13 @@
         document.getElementById(dropdownID).classList.toggle("hidden");
         document.getElementById(dropdownID).classList.toggle("block"); 
       }
+
+      // lgoout
+      let link_logout = document.getElementById('link-logout');
+      link_logout.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('form-logout').submit();
+      })
     </script>
     @include('components.modal-alert') 
     @yield('js')

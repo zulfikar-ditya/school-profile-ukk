@@ -46,7 +46,17 @@ class Extracurricular extends Model
     public array $fields = [
         'name',
         'description',
-        // 'image'
+        'image',
+        'slug',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * @var array $dataTables for data to display in index
+     */
+    public array $dataTables = [
+        'name',
     ];
 
     /**
