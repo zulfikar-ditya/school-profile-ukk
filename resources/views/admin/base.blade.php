@@ -26,12 +26,17 @@
                 </div>
               </a>
               <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-dropdown"> 
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a>
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Anotheraction</a>
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Somethingelse here</a>
+                <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center">
+                  <i class=""data-feather="user"></i>
+                  My Account
+                </a>
                 <div class="h-0 my-2 border border-solid border-blueGray-100"></div> 
-                <a href="#{{Auth::user()->name}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
-                  link
+                <a href="{{route('logout')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center" id="link-logout">
+                  <i data-feather="log-out"></i>
+                  Logout
+                  <form action="{{route('logout')}}" method="post" id="form-logout">
+                    @csrf
+                  </form>
                 </a>
               </div>
             </ul>
@@ -69,6 +74,13 @@
         document.getElementById(dropdownID).classList.toggle("hidden");
         document.getElementById(dropdownID).classList.toggle("block"); 
       }
+
+      // lgoout
+      let link_logout = document.getElementById('link-logout');
+      link_logout.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('form-logout').submit();
+      })
     </script>
     @include('components.modal-alert') 
     @yield('js')

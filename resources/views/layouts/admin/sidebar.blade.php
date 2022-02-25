@@ -16,18 +16,6 @@
         </a>
         <ul class="md:hidden items-center flex flex-wrap list-none">
             <li class="inline-block relative"> 
-                <a class="text-blueGray-500 block py-1 px-3" href="#pablo" onclick="openDropdown(event,'notification-dropdown')">
-                    <i data-feather="bell"></i>
-                </a>
-                <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="notification-dropdown"> 
-                    <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a>
-                    <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another action</a>
-                    <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something else here</a>
-                    <div class="h-0 my-2 border border-solid border-blueGray-100"></div> 
-                    <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Sepratedlink</a>
-                </div>
-            </li>
-            <li class="inline-block relative"> 
                 <a class="text-blueGray-500 block" href="#pablo" onclick="openDropdown(event,'user-responsive-dropdown')">
                     <div class="items-center flex"> 
                         <span class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
@@ -65,11 +53,13 @@
                         <i class="opacity-75 mr-2 text-sm" data-feather="compass"></i> Dashboard
                     </a> 
                 </li>
+                @if (Auth::user()->hasRole('superuser'))
                 <li class="items-center"> 
                     <a href="{{route('admin.user.index')}}" class=" text-xs uppercase py-3 font-bold flex items-center" id="user">
                         <i data-feather="users" class="opacity-75 mr-2 text-sm"></i> User
                     </a> 
                 </li>
+                @endif
             </ul>
             <hr class="my-4 md:min-w-full" />
             <h6 class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">Menu</h6>
@@ -93,11 +83,13 @@
                         <i class="opacity-75 mr-2 text-sm" data-feather="edit"></i> Blog
                     </a> 
                 </li>
+                @if (Auth::user()->hasRole('superuser'))
                 <li class="items-center"> 
                     <a href="{{route('admin.blog-category.index')}}" class=" text-xs uppercase py-3 font-bold flex items-center" id="blog-category">
                         <i class="opacity-75 mr-2 text-sm" data-feather="list"></i> Blog Category
                     </a> 
                 </li>
+                @endif
                 <li class="items-center"> 
                     <a href="{{route('admin.extracurricular.index')}}" class=" text-xs uppercase py-3 font-bold flex items-center" id="extracurricular">
                         <i class="opacity-75 mr-2 text-sm" data-feather="award"></i> Extracurricular
@@ -128,11 +120,13 @@
                         <i class="opacity-75 mr-2 text-sm" data-feather="align-center"></i> Quote
                     </a> 
                 </li>
+                @if (Auth::user()->hasRole('superuser'))
                 <li class="items-center"> 
                     <a href="{{route('admin.school-information.index')}}" class=" text-xs uppercase py-3 font-bold flex items-center" id="school-information">
                         <i class="opacity-75 mr-2 text-sm" data-feather="alert-circle"></i> School Information
                     </a> 
                 </li>
+                @endif
                 <li class="items-center"> 
                     <a href="{{route('admin.slider.index')}}" class=" text-xs uppercase py-3 font-bold flex items-center" id="slider">
                         <i class="opacity-75 mr-2 text-sm" data-feather="sliders"></i> Slider
