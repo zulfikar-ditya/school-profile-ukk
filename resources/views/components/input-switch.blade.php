@@ -2,7 +2,23 @@
 <div class="mb-3">
     <div class="form-check form-switch">
         <input type="checkbox"
-            class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm @error($name) border-rose-500 @enderror"
+            class="
+            form-check-input
+            appearance-none
+            w-9 
+            -ml-10 
+            rounded-full 
+            float-left 
+            h-5 
+            align-top 
+            bg-no-repeat 
+            bg-contain 
+            bg-gray-300 dark:bg-slate-800
+            focus:outline-none 
+            cursor-pointer 
+            shadow-sm
+            @error($name) border-rose-500 @enderror
+            "
             name="{{ $name }}" id="{{ $name }}" placeholder="{{ Str::headline($name) }}"
             value="{{ $value }}" {{ $value == null && $required ? 'required' : '' }}
             {{$autofocus ? 'autofocus' : ''}}

@@ -5,21 +5,29 @@
         {!! $required ? '<span class="text-red-500">*</span>' : '<span class="text-blue-500">*</span>' !!}
     </label>
     <select class="
-        form-select appearance-none
+        form-control
         block
         w-full
         px-3
         py-1.5
         text-base
         font-normal
-        text-gray-700
-        bg-white bg-clip-padding bg-no-repeat
+        text-gray-700 dark:text-gray-200
+        bg-white dark:bg-gray-800 bg-clip-padding
         border border-solid border-gray-300
         rounded
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="{{ $name }}" id="{{ $name }}" {{ $value == null && $required ? 'required' : '' }} value="{{ $value }}">
+        @error($name)
+            border-rose-500
+        @enderror
+        focus:text-gray-700 dark:focus:text-gray-300 
+        focus:bg-white dark:focus:bg-gray-900 
+        focus:border-blue-600 
+        focus:outline-none
+        
+        " name="{{ $name }}" id="{{ $name }}" {{ $value == null && $required ? 'required' : '' }} value="{{ $value }}">
         <option value="" selected>------</option>
         @foreach ($data as $item)
             <option value="{{$item->id}}" {{$value == $item->id ? 'selected' : ''}}>{{$item->name}}</option>

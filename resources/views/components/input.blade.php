@@ -13,8 +13,8 @@
         py-1.5
         text-base
         font-normal
-        text-gray-700
-        bg-white bg-clip-padding
+        text-gray-700 dark:text-gray-200
+        bg-white dark:bg-gray-800 bg-clip-padding
         border border-solid border-gray-300
         rounded
         transition
@@ -23,7 +23,11 @@
         @error($name)
             border-rose-500
         @enderror
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+        focus:text-gray-700 dark:focus:text-gray-300 
+        focus:bg-white dark:focus:bg-gray-900 
+        focus:border-blue-600 
+        focus:outline-none
+        "
         name="{{ $name }}" id="{{ $name }}" placeholder="{{ Str::headline($name) }}"
         value="{{$value}}"
         {{ $value == null && $required ? 'required' : '' }} 

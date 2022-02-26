@@ -2,43 +2,14 @@
 
 @php
     $title = 'message';
-    $page_title = 'create message';
+    $page_title = 'create '.$title;
 @endphp
 @section('title', Str::headline($page_title))
 
 @section('content')
-<div class="relative bg-gray-100 md:pt-32 pb-32 pt-12 w-full">
-    <div class="px-4 md:px-10 mx-auto w-full">
-        <nav class="bg-gray-100 px-5 py-3 rounded-md w-full">
-            <ul class="flex list-none gap-4">
-                <li>
-                    <a href="{{route('admin.index')}}" class="text-blue-500 font-bold">Dashboard</a>
-                </li>
-                <li>
-                    <span class="text-gray-500 mx-2">/</span>
-                </li>
-                <li>
-                    <a href="{{route($routes['index'])}}" class="text-blue-500 font-bold">{{Str::headline($title)}}</a>
-                </li>
-                <li>
-                    <span class="text-gray-500 mx-2">/</span>
-                </li>
-                <li class="text-gray-500">
-                    <a href="{{route($routes['create'])}}">
-                        {{Str::headline($page_title)}}
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <x-card :title="Str::headline($page_title)">
-            @include($files['fields'])
-        </x-card>
-    </div>
+<div class="relative md:pt-32 pb-32 pt-12 w-full">
+    <x-create-crud-component :title="$title" :page_title="$page_title" :routes="$routes">
+        @include($files['fields'])
+    </x-create-crud-component>
 </div>
-@endsection
-
-@section('js')
-    <script>
-        document.querySelector('#{{$title}}').classList.add('text-rose-500')
-    </script>
 @endsection

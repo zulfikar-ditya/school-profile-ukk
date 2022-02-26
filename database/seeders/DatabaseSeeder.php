@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             QuoteSeeder::class,
             SchoolInformationSeeder::class,
             SlidersSeeder::class,
-            WhyUsSeeder::class
+            WhyUsSeeder::class,
+            MessageSeeder::class,
         ]);
     }
 }
