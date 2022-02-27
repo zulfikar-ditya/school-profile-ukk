@@ -19,6 +19,9 @@
     </head>
     <body class="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-white antialiased">
         @include('layouts.frontend.navbar')
+        {{--  --}}
+        @yield('content')
+        {{--  --}}
         @include('layouts.frontend.footer')
         @include('components.dark-mode-toggle')
         @livewireScripts()
