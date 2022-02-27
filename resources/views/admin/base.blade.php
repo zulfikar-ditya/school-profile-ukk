@@ -45,15 +45,17 @@
                     @csrf
                   </form>
                 </a>
-              </div>
-            </ul>
-          </div>
-        </nav>
-        
-        {{-- main content --}}
+                {{-- <div class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center"> --}}
+                  {{-- </div> --}}
+                </div>
+              </ul>
+            </div>
+          </nav>
+          
+          {{-- main content --}}
           @yield('content')
+          {{-- main content --}}
           @include('components.dark-mode-toggle')
-        {{-- main content --}}
       </div>
     </div>
     @livewireScripts() 
