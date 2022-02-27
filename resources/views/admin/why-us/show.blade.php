@@ -31,4 +31,27 @@
     <script>
         document.querySelector('#{{$page_title}}').classList.add('text-rose-500')
     </script>
+    <script>
+        var btn = document.getElementById('btn-delete-{{$model->id}}');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            swal({
+                    title: "Are you sure?", 
+                    text: "Once deleted, you will not be able to recover this record!", 
+                    icon: "warning", 
+                    buttons: true, 
+                    dangerMode: true 
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        document.getElementById('form-delete-{{$model->id}}').submit()
+                    } else { 
+                        swal({
+                            title: "Fyuuh!!!",
+                            text: 'Your record is safe!',
+                            icon: 'success'
+                        }); 
+                    } 
+                });
+        })
+    </script>
 @endsection

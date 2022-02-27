@@ -1,6 +1,6 @@
 @props(['routes', 'title', 'page_title', 'model'])
 <div class="px-4 md:px-10 mx-auto w-full">
-    <nav class="bg-gray-100 dark:bg-slate-800 px-5 py-3 rounded-md w-full">
+    <nav class="bg-gray-100 dark:bg-slate-800 px-5 py-3 rounded-md w-full mb-5">
         <ul class="flex list-none gap-4">
             <li>
                 <a href="{{route('admin.index')}}" class="text-blue-500 dark:text-blue-800 font-bold">Dashboard</a>
@@ -39,6 +39,37 @@
                 </div>
             </div>
         </div>
+        <x-link-cyan :link="route($routes['index'])" :id="'show'">Back</x-link-cyan>
         <x-link-amber :link="route($routes['edit'], $model)" :id="'edit'">Edit</x-link-amber>
+        <x-link-rose :link="route($routes['show'], $model)" :id="'btn-delete-'.$model->id">
+            Delete
+        </x-link-rose>
+        <form action="{{route($routes['destroy'], $model)}}" method="post" id="form-delete-{{$model->id}}">
+            <input type="hidden" name="_method" value="DELETE">
+            @csrf
+        </form>
     </x-card>
 </div>
+<script>
+    var btn = document.getElementById('btn-delete-{{$model->id}}');
+    btn.addEventListener('click', (e) => {
+        e.preventDefault()
+        swal({
+                title: "Are you sure?", 
+                text: "Once deleted, you will not be able to recover this record!", 
+                icon: "warning", 
+                buttons: true, 
+                dangerMode: true 
+            }).then((willDelete) => {
+                if (willDelete) {
+                    document.getElementById('form-delete-{{$model->id}}').submit()
+                } else { 
+                    swal({
+                        title: "Fyuuh!!!",
+                        text: 'Your record is safe!',
+                        icon: 'success'
+                    }); 
+                } 
+            });
+    })
+</script>

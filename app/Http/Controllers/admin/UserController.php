@@ -170,7 +170,7 @@ class UserController extends Controller
         if ($model->hasRole('superuser')) {
             return redirect()->route($this->routes['show'], $id)->with($this->messageRedirectCRUD(false, 'delete', null, "can't delete user with role superuser"));
         }
-        $model->revokeRole($role->name);
+        $model->removeRole($role);
         try {
             $model->delete();
         } catch (\Throwable $th) {
