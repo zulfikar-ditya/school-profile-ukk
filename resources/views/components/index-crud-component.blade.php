@@ -23,7 +23,7 @@
                     <div class="flex flex-wrap">
                         <div class="w-full lg:w-1/2 py-2 pz-0 lg:py-0 lg:px-2">
                             <label for="" class="form-label mb-2 font-bold">Search By <span class="text-cyan-500">*</span></label>
-                            <select class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="field"> 
+                            <select class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 dark:focus:text-gray-300  focus:bg-white dark:focus:bg-gray-900  focus:border-blue-600 focus:outline-none" name="field"> 
                                 <option value="" selected>------</option>
                                 @foreach ($dataTables as $item)
                                     <option value="{{$item}}" @isset($_REQUEST['field']) {{$item == $_REQUEST['field'] ? 'selected' : ''}} @endisset>{{Str::headline($item)}}</option>
@@ -34,7 +34,7 @@
                             <label for="" class="form-label mb-2 font-bold">Search <span class="text-cyan-500">*</span></label>
                             <div class="flex">
                                 <input type="search"
-                                    class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 dark:focus:text-gray-300  focus:bg-white dark:focus:bg-gray-900  focus:border-blue-600  focus:outline-none"
                                     placeholder="Search..."
                                     name="s"
                                     value="@if (isset($_REQUEST['s']) != null){{$_REQUEST['s']}}@endif"
