@@ -10,8 +10,8 @@
         <button class="cursor-pointer text-black dark:text-gray-200 opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button"  onclick="toggleNavbar('example-collapse-sidebar')"> 
             <i class="" data-feather="menu"></i>
         </button> 
-        <a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="{{route('admin.index')}}">
-            <img src="{{url('storage/'.$logo)}}" alt="" class="h-16">
+        <a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 text-center" href="{{route('admin.index')}}">
+            <img src="{{url('storage/'.$logo)}}" alt="" class="h-16 mx-auto">
             {{$name}}
         </a>
         <ul class="md:hidden items-center flex flex-wrap list-none">
