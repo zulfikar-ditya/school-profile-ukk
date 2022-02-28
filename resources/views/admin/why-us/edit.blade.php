@@ -1,7 +1,8 @@
 @extends('admin.base')
 
 @php
-    $page_title = 'wht-us';
+    $page_title = 'why
+    -us';
     $title = 'edit '.$page_title;
 @endphp
 @section('title', Str::headline($title))

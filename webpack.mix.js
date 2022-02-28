@@ -29,3 +29,4 @@ if (mix.inProduction()) {
 }
 
 mix.copyDirectory("resources/font", "public/font");
+mix.disableSuccessNotifications();

@@ -128,12 +128,7 @@ class LearningProcessController extends Controller
     {
         $model = model::findOrFail($id);
         $this->validateData($request, 'update', true, $id);
-        $oldFile =  $model->image;
         $model->loadModel($request->all());
-        if ($request->hasFile('image')) {
-            $this->deleteOne($oldFile);
-            $model->image = $this->uploadFile($request->file('image'), $this->folder);
-        }
         try {
             $model->save();
         } catch (\Throwable $th) {
@@ -151,7 +146,6 @@ class LearningProcessController extends Controller
     public function destroy($id)
     {
         $model = model::findOrFail($id);
-        $this->deleteOne($model->image);
         try {
             $model->delete();
         } catch (\Throwable $th) {

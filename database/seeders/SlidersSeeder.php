@@ -15,7 +15,7 @@ class SlidersSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             Sliders::create([
                 'main_text' => 'Slider ' . $i,
                 'sub_text' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, amet ut non quibusdam adipisci earum nulla velit? Suscipit soluta omnis quasi hic. Aliquid, magni quia eius hic quas dolores ipsa.',

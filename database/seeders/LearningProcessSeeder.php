@@ -15,7 +15,7 @@ class LearningProcessSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 4; $i++) {
             LearningProcess::create([
                 'order' => $i,
                 'text' => 'Learning ' . $i,

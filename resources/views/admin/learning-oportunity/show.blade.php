@@ -11,9 +11,9 @@
     <x-show-crud-component :routes="$routes" :files="$files" :title="$title" :page_title="$page_title" :model="$model">
         <tbody>
             @foreach ($fields as $item)
-            <tr class="border-b bg-white even:bg-gray-100 hover:bg-gray-100">
-                <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{Str::headline($item)}}</td>
-                <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$model->$item}}</td>
+            <tr class="bg-white even:bg-gray-100 hover:bg-gray-100 dark:bg-gray-700 dark:even:bg-slate-800 dark:hover:bg-slate-800">
+                <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">{{Str::headline($item)}}</td>
+                <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">{{$model->$item}}</td>
             </tr>
             @endforeach
         </tbody>
