@@ -83,7 +83,7 @@
     {{-- learning oportunity --}}
     <div class="container mx-auto p-10 my-10">
         <div class="flex flex-wrap justify-center items-center">
-            <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0">
+            <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-right">
                 <h5 class="text-slate-900 dark:text-white text-2xl font-bold">Learning Oportunity</h5>
                 <hr class="border border-slate-800 dark:border-white my-5">
                 <p class="text-slate-500 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, nemo quasi in vitae.</p>
@@ -92,7 +92,7 @@
                 </div>
             </div>
             @foreach ($learning_oportunities as $item)
-                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0">
+                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-up">
                     <div class="bg-white dark:bg-gray-800 rounded-md shadow hover:shadow-md p-5">
                         <i data-feather="{{$item->icon}}" class="text-3xl w-12 h-12 text-rose-500"></i>
                         <h6 class="text-slate-900 dark:text-white text-1xl mt-5 font-semibold">{{Str::headline($item->title)}}</h6>
@@ -111,12 +111,12 @@
     <div class="bg-white dark:bg-gray-800">
         <div class="container mx-auto p-10 my-10">
             <div class="flex flex-wrap flex-row-reverse justify-center items-center min-h-screen">
-                <div class="w-full lg:w-6/12 flex justify-center lg:justify-end">
+                <div class="w-full lg:w-6/12 flex justify-center lg:justify-end" data-aos="flip-left">
                     <img src="{{url('storage/'.$about_us->image)}}" alt="" class="w-full ">
                 </div>
-                <div class="w-full lg:w-6/12">
+                <div class="w-full lg:w-6/12" data-aos="flip-right">
                     <h3 class="text-4xl font-bold">About Us</h3>
-                    <hr class="border border-slate-800 dark:border-white my-4">
+                    <hr class="border border-slate-800 dark:border-white my-4" >
                     <p class="text-slate-500 dark:text-gray-300">
                         {!!$about_us->text!!}
                     </p>
@@ -129,7 +129,7 @@
     {{-- program --}}
     <div class="container mx-auto p-10 my-10">
         <div class="flex flex-row-reverse flex-wrap justify-center items-center">
-            <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0">
+            <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-right">
                 <h5 class="text-slate-900 dark:text-white text-2xl font-bold">Programs</h5>
                 <hr class="border border-slate-800 dark:border-white my-5">
                 <p class="text-slate-500 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, nemo quasi in vitae.</p>
@@ -138,7 +138,7 @@
                 </div>
             </div>
             @foreach ($programs as $item)
-                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0">
+                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-up">
                     <div class="bg-white dark:bg-gray-800 rounded-md shadow hover:shadow-md p-5">
                         <img src="{{url('storage/'.$item->image)}}" alt="" class="object-cover object-center rounded-md h-60 w-full">
                         <h6 class="text-slate-900 dark:text-white text-1xl mt-5 font-semibold">{{Str::headline($item->title)}}</h6>
@@ -157,10 +157,10 @@
     <div class="bg-white dark:bg-gray-800">
         <div class="container mx-auto p-10 mt-10">
             <div class="flex flex-wrap justify-center items-center min-h-screen">
-                <div class="w-full lg:w-6/12 flex justify-center lg:justify-start">
+                <div class="w-full lg:w-6/12 flex justify-center lg:justify-start" data-aos="zoom-in-left">
                     <img src="{{url('storage/'.$why_us->image)}}" alt="" class="w-full lg:w-9/12">
                 </div>
-                <div class="w-full lg:w-6/12">
+                <div class="w-full lg:w-6/12" data-aos="zoom-in-right">
                     <h3 class="text-4xl font-bold">Why Us</h3>
                     <hr class="border border-slate-800 dark:border-white my-4">
                     <p class="text-slate-500 dark:text-gray-300">
@@ -177,7 +177,7 @@
         <div class="container mx-auto">
             <div class="flex justify-center items-center">
                 <div class="w-full lg:w-6/12 m-auto text-center bg-white/30 rounded-md shadow p-10">
-                    <p class="text-xl">{{$quote->text}}</p>
+                    <p class="text-xl text-slate-900">{{$quote->text}}</p>
                 </div>
             </div>
         </div>
@@ -195,7 +195,7 @@
         </div>
         <div class="flex flex-wrap justify-center my-20">
             @foreach ($learning_process as $item)
-                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0">
+                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-up">
                     <div class="bg-white dark:bg-gray-800 rounded-md shadow hover:shadow-md p-5">
                         <div class="text-center">
                             <h3 class="text-4xl bg-rose-500 p-10 rounded-full shadow text-white w-32 mx-auto">{{$item->order}}</h3>
@@ -220,7 +220,7 @@
                     <hr class="border border-slate-800 dark:border-white my-4">
                     <p class="text-slate-500 dark:text-gray-300"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione maxime esse eaque totam nisi aperiam sint.</p>
                 </div>
-                <div class="w-full lg:w-6/12 px-0 py-4 lg:px-4 lg:py-0 my-10 lg:my-0">
+                <div class="w-full lg:w-6/12 px-0 py-4 lg:px-4 lg:py-0 my-10 lg:my-0" data-aos="zoom-in-up">
                     <iframe src="{{$success_story->video_url}}" frameborder="0" class="w-full aspect-video"></iframe>
                     <div class="mt-5">
                         <h6 class="text-xl text-slate-800 dark:text-white font-bold">{{$success_story->name}}</h6>
@@ -236,8 +236,8 @@
                     </div>
                     <div class="grid grid-cols-1 gap-4 mt-7">
                         @foreach ($success_stories as $item)
-                        <div class="">
-                            <div class="bg-gray-100 dark:bg-slate-800 p-5">
+                        <div class="" data-aos="zoom-in-up">
+                            <div class="bg-gray-100 dark:bg-slate-900 p-5">
                                 <div class="flex flex-wrap items-center">
                                     <div class="w-full lg:w-4/12 px-4">
                                         <iframe src="{{$item->video_url}}" frameborder="0" class="w-full aspect-video"></iframe>
@@ -252,7 +252,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="mt-7">
+                    <div class="mt-7 flex justify-center lg:justify-start">
                         <x-link-cyan :link="''" :id="''">See More</x-link-cyan>
                     </div>
                 </div>
@@ -272,14 +272,23 @@
         </div>
         <div class="flex flex-wrap justify-center my-20">
             @foreach ($blogs as $item)
-                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0">
+                <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-up">
                     <div class="bg-white dark:bg-gray-800 rounded-md shadow hover:shadow-md p-5">
                         <img src="{{url('storage/'.$item->image)}}" alt="" class="object-cover object-center rounded-md h-60 w-full">
                         <h6 class="text-slate-900 dark:text-white text-1xl mt-5 font-semibold">{{Str::headline(Str::limit($item->title, 50))}}</h6>
+                        <hr class="border border-slate-800 dark:border-white my-4">
+                        <p class="text-blue-500">{{$item->blog_category->name}}</p>
                     </div>
                 </div>
             @endforeach
         </div>
+        <div class="flex justify-center">
+            <x-link-cyan :link="''" :id="''">See More</x-link-cyan>
+        </div>
     </div>
     {{-- blog --}}
+@endsection
+
+@section('js')
+    <script src="{{asset('js/aos.js')}}"></script>
 @endsection

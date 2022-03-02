@@ -23,6 +23,7 @@ mix.js("resources/js/tinymce.js", "public/js");
 mix.js("resources/js/feather-icons.js", "public/js");
 mix.js("resources/js/darkmode.js", "public/js");
 mix.js("resources/js/flowbite.js", "public/js");
+mix.js("resources/js/aos.js", "public/js");
 
 if (mix.inProduction()) {
     mix.version();
