@@ -16,6 +16,8 @@ mix.js("resources/js/app.js", "public/js").postCss(
     "public/css",
     [require("postcss-import"), require("tailwindcss")]
 );
+mix.css("resources/css/style.css", "public/css");
+mix.css("resources/css/loader.css", "public/css");
 mix.js("resources/js/tailwind-element.js", "public/js");
 mix.js("resources/js/jquery.js", "public/js");
 mix.js("resources/js/sweetalert.js", "public/js");
@@ -24,6 +26,7 @@ mix.js("resources/js/feather-icons.js", "public/js");
 mix.js("resources/js/darkmode.js", "public/js");
 mix.js("resources/js/flowbite.js", "public/js");
 mix.js("resources/js/aos.js", "public/js");
+mix.js("resources/js/loader.js", "public/js");
 
 if (mix.inProduction()) {
     mix.version();

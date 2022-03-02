@@ -14,11 +14,12 @@
     <title> @yield('title') | Admin - {{$name}} | {{$title}}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
     @livewireStyles() 
     @yield('css')
     <link rel="shortcut icon" href="{{url('storage/'.$logo)}}" type="image/x-icon">
   </head>
-  <body class="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-white antialiased">
+  <body class="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-white antialiased loading">
     <div id="root">
       @include('layouts.admin.sidebar')
       <div class="relative md:ml-64">
@@ -56,8 +57,9 @@
           @yield('content')
           {{-- main content --}}
           @include('components.dark-mode-toggle')
+        </div>
       </div>
-    </div>
+      @include('components.loader')
     @livewireScripts() 
     <script src="https://unpkg.com/@popperjs/core@2" charset="utf-8"></script>
     <script src="{{ asset('js/app.js') }}"></script>
@@ -66,6 +68,7 @@
     <script src="{{asset('js/sweetalert.js') }}"></script>
     <script src="{{asset('js/feather-icons.js') }}"></script>
     <script src="{{asset('js/darkmode.js') }}"></script>
+    <script src="{{asset('js/loader.js') }}"></script>
     <script>
       /* Sidebar - Side navigation menu on mobile/responsive mode */ 
       function toggleNavbar(collapseID) {
