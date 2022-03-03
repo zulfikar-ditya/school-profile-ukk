@@ -7,6 +7,7 @@ use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Extracurricular;
+use App\Models\Facility;
 use App\Models\LearningOportunity;
 use App\Models\LearningProcess;
 use App\Models\Message;
@@ -54,7 +55,8 @@ class FrontendController extends Controller
      */
     public function facilities()
     {
-        return view('');
+        $facilities = Facility::orderByDesc('created_at')->paginate(12);
+        return view('frontend.facility.facility', compact('facilities'));
     }
 
     /**

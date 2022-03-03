@@ -29,6 +29,7 @@ Route::name('home.')->group(function () {
     Route::get('/vission-mission', [FrontendController::class, 'vissionMission'])->name('vission-mission');
     Route::get('/extracurricular', [FrontendController::class, 'extracurriculars'])->name('extracurriculars');
     Route::get('/extracurricular/{id}/{name}', [FrontendController::class, 'extracurricular'])->name('extracurricular');
+    Route::get('/facility', [FrontendController::class, 'facilities'])->name('facility');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -5184,6 +5184,10 @@ textarea.form-control.is-invalid {
     width: 25%;
   }
 
+  .md\:w-4\/12 {
+    width: 33.333333%;
+  }
+
   .md\:min-w-full {
     min-width: 100%;
   }

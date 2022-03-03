@@ -13,7 +13,7 @@
         </div>
         <div class="flex flex-wrap justify-center mt-10">
             @foreach ($success_stories as $item)
-            <div class="w-full md:w-3/12 lg:w-4/12 p-4" data-aos="flip-up">
+            <div class="w-full md:w-4/12 lg:w-3/12 p-4" data-aos="flip-up">
                 <div class="bg-white dark:bg-gray-800 shadow hover:shadow-md rounded-md p-5">
                     <iframe src="{{$item->video_url}}" frameborder="0" class="w-full aspect-video"></iframe>
                     <div class="mt-5">
