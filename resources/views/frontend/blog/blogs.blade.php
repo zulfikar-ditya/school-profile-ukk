@@ -32,5 +32,7 @@
 @endsection 
 
 @section('js')
-    <script></script>
+    <script>
+        document.querySelector('#blog').classList.add('active');
+    </script>
 @endsection

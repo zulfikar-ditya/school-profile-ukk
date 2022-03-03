@@ -295,4 +295,7 @@
 @endsection
 
 @section('js')
+<script>
+    document.querySelector('#home').classList.add('active');
+</script>
 @endsection

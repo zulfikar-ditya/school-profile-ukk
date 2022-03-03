@@ -33,5 +33,7 @@
 @endsection
 
 @section('js')
-    <script></script>
+    <script>
+        document.querySelector('#extracurricular').classList.add('active');
+    </script>
 @endsection

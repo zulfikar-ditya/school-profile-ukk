@@ -17,5 +17,7 @@
 @endsection
 
 @section('js')
-    <script></script>
+    <script>
+        document.querySelector('#message').classList.add('active');
+    </script>
 @endsection

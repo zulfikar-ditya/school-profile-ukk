@@ -30,5 +30,7 @@
 @endsection
 
 @section('js')
-    <script></script>
+    <script>
+        document.querySelector('#vission-mission').classList.add('active');
+    </script>
 @endsection
