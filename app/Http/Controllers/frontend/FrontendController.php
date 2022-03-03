@@ -55,7 +55,7 @@ class FrontendController extends Controller
     }
 
     /**
-     * 
+     * blogs page
      * @return \Illuminate\Http\Response
      */
     public function blogs()
@@ -66,7 +66,7 @@ class FrontendController extends Controller
     }
 
     /**
-     * 
+     * blogs by category
      * @return \Illuminate\Http\Response
      */
     public function blogsByCategory($id)
@@ -77,7 +77,9 @@ class FrontendController extends Controller
     }
 
     /**
-     * 
+     * blog detail page
+     * @param int $id for blog id
+     * @param string $slug for blog slug
      * @return \Illuminate\Http\Response
      */
     public function blog($id, $slug)
@@ -125,12 +127,26 @@ class FrontendController extends Controller
     }
 
     /**
-     * 
+     * programs page
      * @return \Illuminate\Http\Response
      */
     public function programs()
     {
-        return view('');
+        $programs = Program::orderByDesc('created_at')->paginate(12);
+        return view('frontend.program.programs', compact('programs'));
+    }
+
+    /**
+     * detail program page
+     * @param int  $id for program id
+     * @param string $title for program title
+     * @return \Illuminate\Http\Response
+     */
+    public function program($id, $title)
+    {
+        $program = Program::findOrFail($id);
+        if ($program->title != $title) return abort(404);
+        return view('frontend.program.program', compact('program'));
     }
 
     /**

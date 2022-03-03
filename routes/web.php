@@ -20,6 +20,8 @@ Route::name('home.')->group(function () {
     Route::get('/blog', [FrontendController::class, 'blogs'])->name('blogs');
     Route::get('/blog/category/{id}', [FrontendController::class, 'blogsByCategory'])->name('blogs.category');
     Route::get('/blog/{id}/{slug}', [FrontendController::class, 'blog'])->name('blog');
+    Route::get('/program', [FrontendController::class, 'programs'])->name('programs');
+    Route::get('/program/{id}/{title}', [FrontendController::class, 'program'])->name('program');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

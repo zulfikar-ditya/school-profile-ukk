@@ -134,20 +134,22 @@
                 <hr class="border border-slate-800 dark:border-white my-5">
                 <p class="text-slate-500 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, nemo quasi in vitae.</p>
                 <div class="mt-5 hidden lg:block">
-                    <x-link-cyan :link="''" :id="''">See More</x-link-cyan>
+                    <x-link-cyan :link="route('home.programs')" :id="''">See More</x-link-cyan>
                 </div>
             </div>
             @foreach ($programs as $item)
                 <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-up">
                     <div class="bg-white dark:bg-gray-800 rounded-md shadow hover:shadow-md p-5">
-                        <img src="{{url('storage/'.$item->image)}}" alt="" class="object-cover object-center rounded-md h-60 w-full">
-                        <h6 class="text-slate-900 dark:text-white text-1xl mt-5 font-semibold">{{Str::headline($item->title)}}</h6>
-                        <p class="text-slate-500 dark:text-gray-300 mt-2">{{Str::limit($item->description, 50)}}</p>
+                        <a href="{{route('home.program', ['id' => $item->id, 'title' => $item->title ])}}" class="no-underline hover:underline">
+                            <img src="{{url('storage/'.$item->image)}}" alt="" class="object-cover object-center rounded-md h-60 w-full">
+                            <h6 class="text-slate-900 dark:text-white text-1xl mt-5 font-semibold">{{Str::headline($item->title)}}</h6>
+                            <p class="text-slate-500 dark:text-gray-300 mt-2">{{Str::limit($item->description, 50)}}</p>
+                        </a>
                     </div>
                 </div>
             @endforeach
             <div class="mt-5 block lg:hidden">
-                <x-link-cyan :link="''" :id="''">See Others</x-link-cyan>
+                <x-link-cyan :link="route('home.programs')" :id="''">See Others</x-link-cyan>
             </div>
         </div>
     </div>
