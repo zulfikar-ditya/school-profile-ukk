@@ -34,19 +34,19 @@
                 </div>
               </a>
               <div class="hidden bg-white dark:bg-gray-800 dark:text-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-dropdown"> 
-                <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center">
+                <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full bg-transparent text-blueGray-700 flex items-center">
                   <i class=""data-feather="user"></i>
                   My Account
                 </a>
                 <div class="h-0 my-2 border border-solid border-blueGray-100"></div> 
-                <a href="{{route('logout')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center" id="link-logout">
+                <a href="{{route('logout')}}" class="text-sm py-2 px-4 font-normal w-full bg-transparent text-blueGray-700 flex items-center" id="link-logout">
                   <i data-feather="log-out"></i>
                   Logout
                   <form action="{{route('logout')}}" method="post" id="form-logout">
                     @csrf
                   </form>
                 </a>
-                {{-- <div class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center"> --}}
+                {{-- <div class="text-sm py-2 px-4 font-normal w-full bg-transparent text-blueGray-700 flex items-center"> --}}
                   {{-- </div> --}}
                 </div>
               </ul>

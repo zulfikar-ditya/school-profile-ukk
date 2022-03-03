@@ -12,8 +12,8 @@
         <tbody>
             @foreach ($fields as $item)
             <tr class="bg-white even:bg-gray-100 hover:bg-gray-100 dark:bg-gray-700 dark:even:bg-slate-800 dark:hover:bg-slate-800">
-                <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">{{Str::headline($item)}}</td>
-                <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">
+                <td class="text-gray-900 dark:text-white font-light px-6 py-4">{{Str::headline($item)}}</td>
+                <td class="text-gray-900 dark:text-white font-light px-6 py-4">
                     @if ($item == 'profile_photo_path')
                         @if ($model->profile_photo_path == null )
                         <img src="{{$model->profile_photo_url}}" alt=""class="h-96">
@@ -27,8 +27,8 @@
             </tr>
             @endforeach
             <tr class="bg-white even:bg-gray-100 hover:bg-gray-100 dark:bg-gray-700 dark:even:bg-slate-800 dark:hover:bg-slate-800">
-                <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">Role</td>
-                <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">
+                <td class="text-gray-900 dark:text-white font-light px-6 py-4">Role</td>
+                <td class="text-gray-900 dark:text-white font-light px-6 py-4">
                     {{$model->getRoleNames()}}
                 </td>
             </tr>

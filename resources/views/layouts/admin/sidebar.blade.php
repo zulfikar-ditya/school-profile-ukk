@@ -10,7 +10,7 @@
         <button class="cursor-pointer text-black dark:text-gray-200 opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button"  onclick="toggleNavbar('example-collapse-sidebar')"> 
             <i class="" data-feather="menu"></i>
         </button> 
-        <a class="md:block md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 text-center" href="{{route('admin.index')}}">
+        <a class="md:block md:pb-2 text-blueGray-600 mr-0 inline-block text-sm uppercase font-bold p-4 px-0 text-center" href="{{route('admin.index')}}">
             <img src="{{url('storage/'.$logo)}}" alt="" class="h-16 mx-auto">
             {{$name}}
         </a>
@@ -24,12 +24,12 @@
                     </div>
                 </a>
                 <div class="hidden bg-white dark:bg-gray-800 dark:border dark:border-gray-300 text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-responsive-dropdown">                     
-                    <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center">
+                    <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full bg-transparent text-blueGray-700 flex items-center">
                         <i class=""data-feather="user"></i>
                         My Account
                     </a>
                     <div class="h-0 my-2 border border-solid border-blueGray-100"></div> 
-                    <a href="{{route('logout')}}" class="text-sm py-2 px-4 font-normal w-full whitespace-nowrap bg-transparent text-blueGray-700 flex items-center" id="link-logout">
+                    <a href="{{route('logout')}}" class="text-sm py-2 px-4 font-normal w-full bg-transparent text-blueGray-700 flex items-center" id="link-logout">
                         <i data-feather="log-out"></i>
                         Logout
                         <form action="{{route('logout')}}" method="post" id="form-logout">
@@ -43,7 +43,7 @@
             <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
                 <div class="flex flex-wrap">
                     <div class="w-6/12"> 
-                        <a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="{{route('admin.index')}}">{{$name}}</a> 
+                        <a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block text-sm uppercase font-bold p-4 px-0" href="{{route('admin.index')}}">{{$name}}</a> 
                     </div>
                     <div class="w-6/12 flex justify-end"> 
                         <button type="button" class="cursor-pointer text-black dark:text-white opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" onclick="toggleNavbar('example-collapse-sidebar')"> 

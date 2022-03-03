@@ -16,7 +16,7 @@
             </li>
             <li>
                 <a href="{{route($routes['show'], $model)}}" class="text-blue-500 dark:text-blue-400 font-bold">
-                    Show {{Str::headline($title)}}
+                    Show {{Str::headline($page_title)}}
                 </a>
             </li>
             <li>

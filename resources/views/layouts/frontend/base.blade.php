@@ -13,6 +13,7 @@
         <title> @yield('title') | {{$name}} | {{$title}}</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
         @livewireStyles() 
         @yield('css')
         <link rel="shortcut icon" href="{{url('storage/'.$logo)}}" type="image/x-icon">
@@ -24,6 +25,7 @@
         {{--  --}}
         @include('layouts.frontend.footer')
         @include('components.dark-mode-toggle')
+        @include('components.loader')
         @livewireScripts()
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/tailwind-element.js') }}"></script> 
@@ -32,6 +34,7 @@
         <script src="{{asset('js/feather-icons.js') }}"></script>
         <script src="{{asset('js/darkmode.js') }}"></script>
         <script src="{{asset('js/flowbite.js') }}"></script>
+        <script src="{{asset('js/loader.js') }}"></script>
         <script>
             // lgoout
             let link_logout = document.getElementById('link-logout');

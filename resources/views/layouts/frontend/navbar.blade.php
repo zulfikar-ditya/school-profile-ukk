@@ -2,7 +2,7 @@
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" class="flex">
             <img src="{{url('storage/'.$logo)}}" alt="" class="h-10">
-            <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">{{$name}}</span>
+            <span class="self-center text-lg font-semibold dark:text-white">{{$name}}</span>
         </a>
         <div class="flex items-center md:order-2">
             @auth

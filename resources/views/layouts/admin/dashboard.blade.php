@@ -196,11 +196,11 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($message as $item)
-                                    <tr class="border-b bg-white even:bg-gray-100 hover:bg-gray-100 dark:bg-slate-700 dark:even:bg-slate-800 dark:hover:bg-slate-800">
+                                    <tr class="bg-white even:bg-gray-100 hover:bg-gray-100 dark:bg-gray-700 dark:even:bg-slate-800 dark:hover:bg-slate-800 dark:bg-slate-700 dark:even:bg-slate-800 dark:hover:bg-slate-800">
                                         @foreach ($dataTables as $tableValue)
-                                        <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap"> {{$item->$tableValue}}</td>
+                                        <td class="text-gray-900 dark:text-white font-light px-6 py-4"> {{$item->$tableValue}}</td>
                                         @endforeach
-                                        <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">
+                                        <td class="text-gray-900 dark:text-white font-light px-6 py-4">
                                             <x-link-amber :link="route('admin.message.edit', $item)" :id="'edit'">Edit</x-link-amber>
                                             <x-link-cyan :link="route('admin.message.show', $item)" :id="'show'">Show</x-link-cyan>
                                             <x-link-rose :link="route('admin.message.show', $item)" :id="'btn-delete-'.$item->id">

@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
             SlidersSeeder::class,
             WhyUsSeeder::class,
             MessageSeeder::class,
+            SuccessStorySeeder::class,
+            BlogSeeder::class,
         ]);
     }
 }
