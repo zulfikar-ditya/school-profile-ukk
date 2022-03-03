@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\LearningOportunity;
 use App\Models\LearningProcess;
+use App\Models\Message;
 use App\Models\Program;
 use App\Models\Quote;
 use App\Models\Sliders;
@@ -154,15 +155,23 @@ class FrontendController extends Controller
      */
     public function message()
     {
-        return view('');
+        return view('frontend.message.message');
     }
 
     /**
      * @return \Illuminate\Http\Response
      */
-    public function storeMessage()
+    public function storeMessage(Request $request)
     {
-        return view('');
+        $model = new Message();
+        $this->validate($request, $model->validateData());
+        $model->loadModel($request->all());
+        try {
+            $model->save();
+        } catch (\Throwable $th) {
+            return redirect()->back()->with($this->messageRedirectCRUD(false, 'create', $th->getMessage()));
+        }
+        return redirect()->back()->with($this->messageRedirectCRUD());
     }
 
     /**

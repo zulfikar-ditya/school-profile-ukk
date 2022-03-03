@@ -22,6 +22,8 @@ Route::name('home.')->group(function () {
     Route::get('/blog/{id}/{slug}', [FrontendController::class, 'blog'])->name('blog');
     Route::get('/program', [FrontendController::class, 'programs'])->name('programs');
     Route::get('/program/{id}/{title}', [FrontendController::class, 'program'])->name('program');
+    Route::get('/message', [FrontendController::class, 'message'])->name('message');
+    Route::post('/message', [FrontendController::class, 'storeMessage'])->name('message.store');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
