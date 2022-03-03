@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container mx-auto my-20 p-10">
-        <div class="w-full lg:w-6/12 px-0 py-4 lg:px-4 lg:py-0 text-center">
+        <div class="w-full lg:w-6/12 px-0 py-4 lg:px-4 lg:py-0 text-center mx-auto">
             <h3 class="text-4xl font-bold">Extracurricular</h3>
             <hr class="border border-slate-800 dark:border-white my-4">
             <p class="text-slate-500 dark:text-gray-300"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione maxime esse eaque totam nisi aperiam sint.</p>

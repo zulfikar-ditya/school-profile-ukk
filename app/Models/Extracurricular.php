@@ -47,7 +47,7 @@ class Extracurricular extends Model
         'name',
         'description',
         'image',
-        'slug',
+        // 'slug',
         'created_at',
         'updated_at'
     ];

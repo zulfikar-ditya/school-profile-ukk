@@ -27,7 +27,7 @@
                                     @foreach ($dataTables as $tableValue)
                                     <td class="text-gray-900 dark:text-white font-light px-6 py-4"> {{$item->$tableValue}}</td>
                                     @endforeach
-                                    <td class="text-gray-900 dark:text-white font-light px-6 py-4">
+                                    <td class="text-gray-900 dark:text-white font-light px-6 py-4 whitespace-nowrap">
                                         <x-link-amber :link="route($routes['edit'], $item)" :id="'edit'">Edit</x-link-amber>
                                         <x-link-cyan :link="route($routes['show'], $item)" :id="'show'">Show</x-link-cyan>
                                         <x-link-rose :link="route($routes['show'], $item)" :id="'btn-delete-'.$item->id">
