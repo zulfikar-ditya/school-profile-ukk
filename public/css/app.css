@@ -3486,6 +3486,9 @@ textarea.form-control.is-invalid {
 .w-9 {
   width: 2.25rem;
 }
+.w-1\/2 {
+  width: 50%;
+}
 .min-w-0 {
   min-width: 0px;
 }

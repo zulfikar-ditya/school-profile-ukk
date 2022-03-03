@@ -5,7 +5,7 @@
 @section('content')
     <div class="container mx-auto my-20 p-10">
         <div class="flex justify-center">
-            <div class="w-full lg:w-6/12 shadow hover:shadow-md rounded-md">
+            <div class="w-full lg:w-6/12">
                 <img src="{{url('storage/'.$logo)}}" alt="" class="h-64 object-cover object-center mx-auto">
 
                 <div class="mt-10 text-center">

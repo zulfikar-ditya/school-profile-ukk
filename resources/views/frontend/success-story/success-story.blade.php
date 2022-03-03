@@ -5,7 +5,7 @@
 @section('content')
     <div class="container mx-auto my-20 p-10">
         <div class="flex justify-center">
-            <div class="w-full lg:w-6/12 p-5 shadow hover:shadow-md rounded-md">
+            <div class="w-full lg:w-6/12 p-5">
                 <iframe src="{{$success_story->video_url}}" frameborder="0" class="w-full aspect-video"></iframe>
                 <div class="text-center mt-10">
                     <h6 class="text-xl text-slate-800 dark:text-white font-bold">{{$success_story->name}}</h6>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\Extracurricular;
 use App\Models\LearningOportunity;
 use App\Models\LearningProcess;
 use App\Models\Message;
@@ -111,7 +112,7 @@ class FrontendController extends Controller
     }
 
     /**
-     * 
+     * success story page
      * @return \Illuminate\Http\Response
      */
     public function successStories()
@@ -157,6 +158,7 @@ class FrontendController extends Controller
     }
 
     /**
+     * form message
      * @return \Illuminate\Http\Response
      */
     public function message()
@@ -165,6 +167,8 @@ class FrontendController extends Controller
     }
 
     /**
+     * store message
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function storeMessage(Request $request)
@@ -181,6 +185,7 @@ class FrontendController extends Controller
     }
 
     /**
+     * dispay vission mission school
      * @return \Illuminate\Http\Response
      */
     public function vissionMission()
@@ -193,10 +198,25 @@ class FrontendController extends Controller
     }
 
     /**
+     * extracurriculars page
      * @return \Illuminate\Http\Response
      */
     public function extracurriculars()
     {
-        return view('');
+        $extracurriculars = Extracurricular::orderByDesc('created_at')->paginate(12);
+        return view('frontend.extracurricular.extracurriculars', compact('extracurriculars'));
+    }
+
+    /**
+     * extracurricular detail
+     * @param int $id extracurricular id
+     * @param string $name extracurricular name
+     * @return \Illuminate\Http\Response
+     */
+    public function extracurricular($id, $name)
+    {
+        $extracurricular = Extracurricular::findOrFail($id);
+        if ($extracurricular->name != $name) return abort(404);
+        return view('frontend.extracurricular.extracurricular', compact('extracurricular'));
     }
 }
