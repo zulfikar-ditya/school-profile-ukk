@@ -42,7 +42,7 @@
                 </ul>
             </div>
             <div>
-                <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Address</h3>
+                <h3 class="mb-6 text-sm font-semibold text-gray-300 uppercase">Address</h3>
                 <ul>
                     <li class="mb-4">
                         {{$school_information->address}}
