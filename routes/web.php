@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('home.')->group(function () {
     Route::get('/', [FrontendController::class, 'index'])->name('index');
+    Route::get('/blog', [FrontendController::class, 'blogs'])->name('blogs');
+    Route::get('/blog/category/{id}', [FrontendController::class, 'blogsByCategory'])->name('blogs.category');
+    Route::get('/blog/{id}/{slug}', [FrontendController::class, 'blog'])->name('blog');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

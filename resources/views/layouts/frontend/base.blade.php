@@ -35,6 +35,7 @@
         <script src="{{asset('js/darkmode.js') }}"></script>
         <script src="{{asset('js/flowbite.js') }}"></script>
         <script src="{{asset('js/loader.js') }}"></script>
+        <script src="{{asset('js/aos.js')}}"></script>
         <script>
             // lgoout
             let link_logout = document.getElementById('link-logout');

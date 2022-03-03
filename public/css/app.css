@@ -1828,6 +1828,12 @@ textarea.form-control.is-invalid {
   left: 0;
   z-index: 1030;
 }
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
 .ripple-wave.active {
   transform: scale(1);
   opacity: 0;
@@ -3137,6 +3143,9 @@ textarea.form-control.is-invalid {
   white-space: nowrap;
   border-width: 0;
 }
+.static {
+  position: static;
+}
 .fixed {
   position: fixed;
 }
@@ -3145,6 +3154,10 @@ textarea.form-control.is-invalid {
 }
 .relative {
   position: relative;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
 }
 .inset-0 {
   top: 0px;
@@ -3321,6 +3334,15 @@ textarea.form-control.is-invalid {
 }
 .-ml-10 {
   margin-left: -2.5rem;
+}
+.mt-20 {
+  margin-top: 5rem;
+}
+.mt-9 {
+  margin-top: 2.25rem;
+}
+.mb-7 {
+  margin-bottom: 1.75rem;
 }
 .block {
   display: block;
@@ -3637,8 +3659,14 @@ textarea.form-control.is-invalid {
   --tw-divide-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-divide-opacity));
 }
+.self-start {
+  align-self: flex-start;
+}
 .self-center {
   align-self: center;
+}
+.overflow-auto {
+  overflow: auto;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -3855,6 +3883,18 @@ textarea.form-control.is-invalid {
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 131 248 / var(--tw-bg-opacity));
+}
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 239 254 / var(--tw-bg-opacity));
+}
+.bg-rose-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 228 230 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -5291,6 +5331,10 @@ textarea.form-control.is-invalid {
     display: none;
   }
 
+  .lg\:h-44 {
+    height: 11rem;
+  }
+
   .lg\:min-h-screen {
     min-height: 100vh;
   }
@@ -5317,6 +5361,10 @@ textarea.form-control.is-invalid {
 
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:justify-start {

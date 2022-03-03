@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Blog;
+use App\Models\BlogCategory;
 use App\Models\LearningOportunity;
 use App\Models\LearningProcess;
 use App\Models\Program;
@@ -59,7 +60,9 @@ class FrontendController extends Controller
      */
     public function blogs()
     {
-        return view('');
+        $blogs = Blog::orderByDesc('created_at')->paginate(12);
+        $category = [];
+        return view('frontend.blog.blogs', compact('blogs', 'category'));
     }
 
     /**
@@ -68,7 +71,9 @@ class FrontendController extends Controller
      */
     public function blogsByCategory($id)
     {
-        return view('');
+        $category = BlogCategory::findOrFail($id);
+        $blogs = Blog::orderByDesc('created_at')->where('blog_category_id', $id)->paginate(12);
+        return view('frontend.blog.blogs', compact('blogs', 'category'));
     }
 
     /**
@@ -77,7 +82,10 @@ class FrontendController extends Controller
      */
     public function blog($id, $slug)
     {
-        return view('');
+        $blog = Blog::findOrFail($id);
+        if ($blog->slug != $slug) return abort(404);
+        $blogs = Blog::orderByDesc('created_at')->where('blog_category_id', $blog->blog_category_id)->paginate(2);
+        return view('frontend.blog.blog', compact('blog', 'blogs'));
     }
 
     /**
