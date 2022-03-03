@@ -11,6 +11,7 @@ use App\Models\LearningProcess;
 use App\Models\Message;
 use App\Models\Program;
 use App\Models\Quote;
+use App\Models\SchoolInformation;
 use App\Models\Sliders;
 use App\Models\SuccessStory;
 use App\Models\WhyUs;
@@ -184,7 +185,11 @@ class FrontendController extends Controller
      */
     public function vissionMission()
     {
-        return view('');
+        $school_information = SchoolInformation::orderByDesc('created_at')->limit(1)->get()[0];
+        $vission = $school_information->vission;
+        $mission = $school_information->mission;
+        $logo = $school_information->logo;
+        return view('frontend.vission-mission.vission-mission', compact('vission', 'mission', 'logo'));
     }
 
     /**
