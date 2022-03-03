@@ -115,16 +115,21 @@ class FrontendController extends Controller
      */
     public function successStories()
     {
-        return view('');
+        $success_stories = SuccessStory::orderByDesc('created_at')->paginate(12);
+        return view('frontend.success-story.success-stories', compact('success_stories'));
     }
 
     /**
-     * 
+     * detail success Story
+     * @param int $id for success story id
+     * @param string $name for success story name
      * @return \Illuminate\Http\Response
      */
-    public function successStory($id)
+    public function successStory($id, $name)
     {
-        return view('');
+        $success_story = SuccessStory::findOrFail($id);
+        if ($success_story->name != $name) return abort(404);
+        return view('frontend.success-story.success-story', compact('success_story'));
     }
 
     /**

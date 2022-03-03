@@ -24,6 +24,8 @@ Route::name('home.')->group(function () {
     Route::get('/program/{id}/{title}', [FrontendController::class, 'program'])->name('program');
     Route::get('/message', [FrontendController::class, 'message'])->name('message');
     Route::post('/message', [FrontendController::class, 'storeMessage'])->name('message.store');
+    Route::get('/success-story', [FrontendController::class, 'successStories'])->name('success-stories');
+    Route::get('/success-story/{id}/{name}', [FrontendController::class, 'successStory'])->name('success-story');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

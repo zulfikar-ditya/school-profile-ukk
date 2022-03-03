@@ -5170,6 +5170,10 @@ textarea.form-control.is-invalid {
     width: 16rem;
   }
 
+  .md\:w-3\/12 {
+    width: 25%;
+  }
+
   .md\:min-w-full {
     min-width: 100%;
   }

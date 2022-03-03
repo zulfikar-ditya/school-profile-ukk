@@ -245,9 +245,10 @@
                                         <iframe src="{{$item->video_url}}" frameborder="0" class="w-full aspect-video"></iframe>
                                     </div>
                                     <div class="w-full lg:w-8/12 px-4">
-                                        <h6 class="text-xl text-slate-800 dark:text-white font-bold">{{$item->name}}</h6>
-                                        <hr class="border border-slate-800 dark:border-white my-4">
-                                        <p class="text-gray-500 dark:text-gray-300">{!!$item->text!!}</p>
+                                        <a href="{{route('home.success-story', ['id' => $item->id, 'name' => $item->name])}}" class="no-underline hover:underline">
+                                            <h6 class="text-xl text-slate-800 dark:text-white font-bold">{{$item->name}}</h6>
+                                            <hr class="border border-slate-800 dark:border-white my-4">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +256,7 @@
                         @endforeach
                     </div>
                     <div class="mt-7 flex justify-center lg:justify-start">
-                        <x-link-cyan :link="''" :id="''">See More</x-link-cyan>
+                        <x-link-cyan :link="route('home.success-stories')" :id="''">See More</x-link-cyan>
                     </div>
                 </div>
             </div>
