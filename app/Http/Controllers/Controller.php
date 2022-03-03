@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Components\Pack;
-use App\Components\UploadFile;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -11,5 +10,6 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, Pack, UploadFile;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, Pack;
+    use \App\Components\UploadFile;
 }
