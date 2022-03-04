@@ -1,5 +1,7 @@
 @extends('layouts.frontend.base')
 
+@section('title', 'Account')
+
 @section('content')
 
     <div class="container mx-auto mt-20 p-10">
