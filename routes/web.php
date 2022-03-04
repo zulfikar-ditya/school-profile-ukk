@@ -32,10 +32,6 @@ Route::name('home.')->group(function () {
     Route::get('/facility', [FrontendController::class, 'facilities'])->name('facility');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
 Route::middleware(['auth:sanctum'])->group(function () {
     // admin
     Route::middleware(['role:superuser|admin'])->namespace('\App\Http\Controllers\admin')->name('admin.')->prefix('admin')->group(function () {
