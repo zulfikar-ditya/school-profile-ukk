@@ -34,7 +34,7 @@
                 </div>
               </a>
               <div class="hidden bg-white dark:bg-gray-800 dark:text-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width: 12rem;" id="user-dropdown"> 
-                <a href="{{route('dashboard')}}" class="text-sm py-2 px-4 font-normal w-full bg-transparent text-blueGray-700 flex items-center">
+                <a href="{{route('profile.show')}}" class="text-sm py-2 px-4 font-normal w-full bg-transparent text-blueGray-700 flex items-center">
                   <i class=""data-feather="user"></i>
                   My Account
                 </a>
