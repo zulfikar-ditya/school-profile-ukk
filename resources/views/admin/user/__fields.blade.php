@@ -8,6 +8,7 @@
     @if ($model)
         <x-input-password :type="'password'" :name="'old_password'" :value="$model ? $model->password : '' " :required="true" :autofocus="false"></x-input-password>
     @endif
+    @if (Auth::user()->hasRole('superuser'))
     @if ($model)
         @php
             $current_role = count($model->getRoleNames()) != 0 ? $model->getRoleNames()[0] : '';
@@ -19,6 +20,7 @@
         @endphp
     @endif
     <x-input-select :name="'role'" :value="$model ? $value_role : '' " :required="false" :autofocus="false" :data="$role"></x-input-select>
+    @endif
 </x-form>
 
 @section('js')
