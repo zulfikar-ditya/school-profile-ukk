@@ -86,13 +86,15 @@ class UserController extends Controller
         $model = new model();
         $model->loadModel($request->all());
         $model->loadPassword($request->password);
-        $role = $request->role;
-        $get_role = Role::findOrFail($role);
-        $model->syncRoles($get_role->name);
         try {
             $model->save();
         } catch (\Throwable $th) {
             return redirect()->back()->with($this->messageRedirectCRUD(false, 'create', $th->getMessage()));
+        }
+        if ($request->role) {
+            $role = $request->role;
+            $get_role = Role::findOrFail($role);
+            $model->syncRoles($get_role->name);
         }
         return redirect()->route($this->routes['show'], $model)->with($this->messageRedirectCRUD());
     }

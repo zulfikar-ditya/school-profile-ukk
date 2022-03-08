@@ -87,9 +87,6 @@
                 <h5 class="text-slate-900 dark:text-white text-2xl font-bold">Learning Oportunity</h5>
                 <hr class="border border-slate-800 dark:border-white my-5">
                 <p class="text-slate-500 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, nemo quasi in vitae.</p>
-                <div class="mt-5 hidden lg:block">
-                    <x-link-cyan :link="''" :id="''">See Others</x-link-cyan>
-                </div>
             </div>
             @foreach ($learning_oportunities as $item)
                 <div class="w-full lg:w-3/12 px-0 py-4 lg:px-4 lg:py-0" data-aos="fade-up">
@@ -100,9 +97,6 @@
                     </div>
                 </div>
             @endforeach
-            <div class="mt-5 block lg:hidden">
-                <x-link-cyan :link="''" :id="''">See Others</x-link-cyan>
-            </div>
         </div>
     </div>
     {{-- learning oportunity --}}

@@ -9,7 +9,7 @@
                         <a href="{{route('home.extracurriculars')}}" rel="noreferrer" class="text-gray-300 hover:underline">Extracurricular</a>
                     </li>
                     <li class="mb-4">
-                        <a href="{{route('home.facility')}}" rel="noreferrer" class="text-gray-300 hover:underline">Faciity</a>
+                        <a href="{{route('home.facility')}}" rel="noreferrer" class="text-gray-300 hover:underline">Facility</a>
                     </li>
                     <li class="mb-4">
                         <a href="{{route('home.programs')}}" rel="noreferrer" class="text-gray-300 hover:underline">Program</a>

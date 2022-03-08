@@ -12,6 +12,7 @@
     @if ($model)
         @php
             $current_role = count($model->getRoleNames()) != 0 ? $model->getRoleNames()[0] : '';
+            $value_role = null;
             foreach ($role as $item) {
                 if($item->name == $current_role) {
                     $value_role = $item->id;
