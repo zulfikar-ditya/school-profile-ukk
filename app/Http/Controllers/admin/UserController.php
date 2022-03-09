@@ -146,8 +146,10 @@ class UserController extends Controller
         if ($model->hasRole('superuser')) {
             return redirect()->route($this->routes['edit'], $id)->with($this->messageRedirectCRUD(false, 'delete', null, "can't update role user with role superuser"));
         }
-        $get_role = Role::findOrFail($role);
-        $model->syncRoles($get_role->name);
+        if ($request->role) {
+            $get_role = Role::findOrFail($role);
+            $model->syncRoles($get_role->name);
+        }
         try {
             $model->save();
         } catch (\Throwable $th) {
